@@ -1,4 +1,4 @@
-# 1. kodutöö (I rühm)
+# 1. kodutöö (III rühm)
 
 ## Kirjeldus
 
