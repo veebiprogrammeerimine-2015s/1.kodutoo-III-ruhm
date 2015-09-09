@@ -43,21 +43,12 @@
     <title>Login page</title>
 </head>
 <body>
-    
-	<h2>Logi sisse</h2>
-	
-	<form action="login.php" method="post" >
-	<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?> <br><br>
-	<input name="password" type="password" placeholder="Parool" > <?php echo $password_error; ?> <br><br>
-	<input type ="submit" value="Logi sisse">
-	</form>
-	
-<h2>Registreeru</h2>
+    <h2>Registreeri!</h2>
 
 <form id='register' action='register.php' method='post'
     accept-charset='UTF-8'>
 <fieldset >
-<legend>Register</legend>
+<legend>Registreeri!</legend>
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 <label for='name' >Nimi*: </label>
 <input type='text' name='name' id='name' maxlength="50" />
@@ -74,6 +65,30 @@
 </fieldset>
 </form>
 
+	<h2>Logi sisse</h2>
+	
+	<form action="login.php" method="post" >
+	<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?> <br><br>
+	<input name="password" type="password" placeholder="Parool" > <?php echo $password_error; ?> <br><br>
+	<input type ="submit" value="Logi sisse!">
+	</form>
+	
 	
 </body
+</html>
+
+<html>
+<head>
+<style>
+body {background-color:lightgreen}
+h1   {color:black}
+p    {color:black}
+</style>
+</head>
+<body>
+
+<h1>Pealkiri - teemale</h1>
+<p>alltekst,mis toimuma hakkab.</p>
+
+</body>
 </html>
