@@ -20,7 +20,7 @@
 		} else {
 			
 			if(strlen ($_POST["password"]) < 8){
-				$password_error = "Peab olema vähemalt 8 tähemärki pikk";
+				$password_error = "Peab olema vähemalt 8 tähemärki pikk!";
 			}
 		}
 	}
