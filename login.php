@@ -56,7 +56,9 @@
 			<input name="username" type="username" placeholder="username" > <br><br>
 			<input name="password" type="password" placeholder="password" > <br><br>
 			<input name="password" type="password" placeholder="repeat password" > <br><br><br><br>
-			
+			<input name="name" type="name" placeholder="first name" > <br><br>
+			<input name="name" type="name" placeholder="last name" > <br><br>
+			<input type="submit" value="Create user">
 			
 			
 			
