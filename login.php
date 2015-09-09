@@ -49,27 +49,27 @@
 	<form action="login.php" method="post" >
 	<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?> <br><br>
 	<input name="password" type="password" placeholder="Parool" > <?php echo $password_error; ?> <br><br>
-	<input type ="submit" value="log in">
+	<input type ="submit" value="Logi sisse">
 	</form>
 	
-<h2>Loo kasutaja</h2>
+<h2>Registreeru</h2>
 
 <form id='register' action='register.php' method='post'
     accept-charset='UTF-8'>
 <fieldset >
 <legend>Register</legend>
 <input type='hidden' name='submitted' id='submitted' value='1'/>
-<label for='name' >Your Full Name*: </label>
+<label for='name' >Nimi*: </label>
 <input type='text' name='name' id='name' maxlength="50" />
-<label for='email' >Email Address*:</label>
+<label for='email' >E-posti address*:</label>
 <input type='text' name='email' id='email' maxlength="50" />
  
-<label for='username' >UserName*:</label>
+<label for='username' >Kasutajanimi*:</label>
 <input type='text' name='username' id='username' maxlength="50" />
  
-<label for='password' >Password*:</label>
+<label for='password' >Parool*:</label>
 <input type='password' name='password' id='password' maxlength="50" />
-<input type='submit' name='Submit' value='Submit' />
+<input type='submit' name='Registreeru!' value='Registreeru!' />
  
 </fieldset>
 </form>
