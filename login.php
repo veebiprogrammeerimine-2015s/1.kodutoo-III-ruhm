@@ -50,9 +50,22 @@
 		</form>
 	
 	<h2>Create user</h2>
-	
-	
+		
+		<form action="create_user.php" method="post" >
+			<input name="email" type="email" placeholder="e-mail" > <br><br>
+			<input name="username" type="username" placeholder="username" > <br><br>
+			<input name="password" type="password" placeholder="password" > <br><br>
+			<input name="password" type="password" placeholder="repeat password" > <br><br><br><br>
+			
+			
+			
+			
+			
+ 	
 </body>
 
 
 </html>
+
+
+
