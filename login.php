@@ -26,6 +26,17 @@
 
 }
 
+<?php
+
+if(isset($_POST['submit'])){
+
+}else{
+
+
+
+	
+}
+
 
 
 ?>
@@ -47,32 +58,7 @@
 	<h2>create user</h2>
 
 
-<div class='formcontainer'>
-<h1>Register</h1>
-<form method="post"  action="">
-	<div class='para'>
-		<label for='name'>Name: </label><br />
-		<input type="text" id='name' name="name"/>
-	</div>
-	<div class='para'>
-		<label for='email'>Email:</label><br />
-		<input type="text" id='email' name="email"/>
-	</div>
-	<div class='para'>
-		<label for='regpwd'>Password:</label> <br />
-		<div class='pwdwidgetdiv' id='thepwddiv'></div>
-		<script  type="text/javascript" >
-		var pwdwidget = new PasswordWidget('thepwddiv','regpwd');
-		pwdwidget.MakePWDWidget();
-		</script>
-		<noscript>
-		<div><input type='password' id='regpwd' name='regpwd' /></div>		
-		</noscript>
-	</div>
-	<div class='para'><br /><br />
-	<input type="submit" name='submit' value="submit" />
-	</div>
-</form>
+
 </body>
 
 
