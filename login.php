@@ -2,6 +2,7 @@
 
 	// LOGIN.PHP
 	// echo $_POST["email"];
+
 	$email_error = "";
 	$password_error = "";
 
@@ -26,16 +27,9 @@
 
 }
 
-<?php
 
-if(isset($_POST['submit'])){
+if(isset($_POST['registreeru']))
 
-}else{
-
-
-
-	
-}
 
 
 
@@ -56,8 +50,16 @@ if(isset($_POST['submit'])){
 
 
 	<h2>create user</h2>
-
-
+<?php if(isset($_POST['registreeru'])) ?>
+<form action="login.php" method="POST">
+<input type="text" placeholder="eesnimi" /><br />
+<input type="text" placeholder="perekonna nimi" /><br />
+<input type="text" placeholder="kasutajanimi" /><br />
+<input type="text" placeholder="Email" /><br />
+<input type="text" placeholder="uuesti Email" /><br />
+<input type="password" placeholder="Parool" /><br />
+<input type="password" placeholder="uuesti parool" /><br />
+<input type="submit" value="Register" name="registreeru" /><br />
 
 </body>
 
