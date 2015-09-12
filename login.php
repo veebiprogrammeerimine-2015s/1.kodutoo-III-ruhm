@@ -38,7 +38,7 @@
 	<title>Login page</title>
 </head>
 <body>
-<p><span class="error">* täida need väljad.</span></p>
+<
 	<h2>Login</h2>
 		<form action="login.php" method="post" >
 			<input name="email" type="email" placeholder="E-post"><?php echo $email_error; ?><br><br>
