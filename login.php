@@ -38,6 +38,7 @@
 	<title>Login page</title>
 </head>
 <body>
+<p><span class="error">* täida need väljad.</span></p>
 	<h2>Login</h2>
 		<form action="login.php" method="post" >
 			<input name="email" type="email" placeholder="E-post"><?php echo $email_error; ?><br><br>
@@ -45,7 +46,12 @@
 			<input type="submit" value="Log in"> 
 		</form>
 		
-	<h2>Create user</h2>
+	<h2>Loo kasutaja</h2>
+		<form action="login.php" method="post">
+			<input name="kasutaja nimi" type="text" placeholder="Kasutaja nimi"> või <input name="email" type="email" placeholder="E-post"><br></br>
+			<input name="password1" type="password" placeholder="Parool"><?php echo $password_error;?> <br></br>
+			<input type="submit" value="Loo kasutaja">
+		</form>
 </body>
 
 
