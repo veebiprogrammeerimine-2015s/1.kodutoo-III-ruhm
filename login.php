@@ -3,14 +3,16 @@
 	// LOGIN.PHP
 	$email_error = "";
 	$passw_error = "";
+	$fname_error = "";
+	$lname_error = "";
 	//echo $_POST["email"];
 	// kontrollime et keegi vajutas input nuppu
 	if($_SERVER["REQUEST_METHOD"]=="POST"){
-		//echo "keegi vajutas nuppu";
 		//kontrollin et e-post ei ole tühi
 		if (empty($_POST["email"])){
-			$email_error = "see väli on kohustulik";
+			$email_error = "see väli on kohustulik";	
 		}
+		//kontrollin et parool ei ole tühi
 		if (empty($_POST["password"])){
 			$passw_error = "see väli on kohustulik";
 		} else {
@@ -20,6 +22,14 @@
 				$passw_error="peab olema vähemalt 8 tähemärki";
 			}
 		}
+		//kontrollin et eesnimi ei ole tühi
+		if (empty($_POST["email"])){
+			$fname_error = "see väli on kohustulik";
+		}
+		//kontrollin et perekonnanimi ei ole tühi
+		if (empty($_POST["email"])){
+			$lname_error = "see väli on kohustulik";
+		}	
 	}
 ?>
 <html>
@@ -36,6 +46,17 @@
 			<input type="submit" value="log in"> <br><br>
 		</form>
 	<h2>Create user</h2>
+	
+		<form action="login.php" method="post">
+			<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?><br><br>
+			<input name="password" type="password" placeholder="Parool"> <?php echo $passw_error; ?> <br><br>
+			<input name="first name" type="text" placeholder="Eesnimi"> <?php echo $fname_error; ?><br><br>
+			<input name="last name" type="text" placeholder="Perekonnanimi"> <?php echo $lname_error; ?><br><br>
+			Sugu:
+			<input name="sugu" type="radio" value="Naine">Naine
+			<input name="sugu" type="radio" value="Mees">Mees<br><br>
+			<input type="submit" value="Submit"> <br><br>
+	
 </body>
 
 
