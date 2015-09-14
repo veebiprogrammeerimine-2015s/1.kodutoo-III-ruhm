@@ -18,17 +18,12 @@
 		
 		if(empty($_POST["password"])) {
 			$password_error = "Parool on kohustuslik";
-		} elseif ($_POST["password"] === $_POST["password_uuesti"]); {
-			//echo asd
 		} else {
-			
 			$password_uuesti_error = "Paroolid peavad olema samad";
 			//kui oleme siia jõudnud siis parool ei ole tühi
 			//kontrollin et olek vähemalt 8 sümbolit pikk
 			if(strlen($_POST["password"]) < 8) {
-				
 				$password_error = "Parool peab olema vähemalt 8 tähemärki pikk";
-				
 			}
 		}
 		
