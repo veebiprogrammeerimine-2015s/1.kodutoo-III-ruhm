@@ -13,17 +13,19 @@
 		
 		
 		if(empty($_POST["email"]))  {
-			$email_error = "Email on kohustuslik";
+			$email_error = "VEATEADE: Email on kohustuslik!";
 		}
 		
 		if(empty($_POST["password"])) {
-			$password_error = "Parool on kohustuslik";
+			$password_error = "VEATEADE: Parool on kohustuslik!";
 		} else {
-			$password_uuesti_error = "Paroolid peavad olema samad";
 			//kui oleme siia jõudnud siis parool ei ole tühi
 			//kontrollin et olek vähemalt 8 sümbolit pikk
 			if(strlen($_POST["password"]) < 8) {
-				$password_error = "Parool peab olema vähemalt 8 tähemärki pikk";
+				$password_error = "VEATEADE: Parool peab olema vähemalt 8 tähemärki pikk!";
+			}
+			if($_POST["password"] != $_POST["password_uuesti"]) {
+				$password_uuesti_error = "VEATEADE: Paroolid peavad kattuma!";
 			}
 		}
 		
@@ -46,12 +48,13 @@
 		<h1>Registreeri</h1>
 			<form action="registreeri.php" method="post">
 				Kasutajanimi:<br>
-				<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?><br>
+				<input name="email" type="email" placeholder="E-post"> <br>
 				Parool:<br>
-				<input name="password" type="password" placeholder="Parool"> <?php echo $password_error; ?><br>
+				<input name="password" type="password" placeholder="Parool"><br>
 				Parool uuesti:<br>
-				<input name="password_uuesti" type="password" placeholder="Parool uuesti"> <?php echo $password_uuesti_error; ?><br><br>
-				<input type="submit" value="Registreeri">
+				<input name="password_uuesti" type="password" placeholder="Parool uuesti"><br><br>
+				<input type="submit" value="Registreeri"><br><br>
+				<?php echo $password_uuesti_error; ?><?php echo $password_error; ?><?php echo $email_error; ?>
 			</form>
 	</center>
 <center><a href="login.php">Kasutaja olemas? Logi sisse siin!</a></center>
