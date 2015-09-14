@@ -12,12 +12,12 @@
 		//echo "keegi vajutas nuppu";
 		//kontrollin, et e-post ei ole tühi
 		
-		
+					
 		if (empty($_POST["email"])) {
 			$email_error = "See väli on kohustuslik";
 			
 		}
-		
+			
 		//kontrollin, et parool ei ole tühi
 		if (empty($_POST["password"])) {
 			$password_error = "See väli on kohustuslik";
@@ -33,8 +33,14 @@
 			
 		}
 		
+		if (empty($_POST["username"])) {
+			$name_error = "See väli on kohustuslik";
+			
+		}
 		
 	}	
+	
+		
 	
 ?>
 <html>
@@ -42,6 +48,8 @@
 	<title>Login page</title>
 </head>
 <body>
+	<FONT FACE="arial">
+	
 	<h2>Log in</h2>
 	
 	<form action="login.php" method="post">
@@ -52,15 +60,15 @@
 		
 	<h2>Sign up</h2>
 	
-	<form action="signup.php" method="post">
+	<form action="login.php" method="post">
 		<input name="fullname" type="text" placeholder="Full Name"> <?php echo $name_error; ?> <br><br>
 		<input name="username" type="name" placeholder="Username"> <?php echo $name_error; ?> <br><br>
 		<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?> <br><br>
 		<input name="password" type="password" placeholder="Parool"> <?php echo $password_error; ?> <br><br>
-		<input type="submit" value="Log in">
+		<input type="submit" value="Submit">
 	</form>	
 	
-	
+	</FONT>
 	
 </body>
 
