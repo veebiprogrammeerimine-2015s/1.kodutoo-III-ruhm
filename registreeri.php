@@ -40,12 +40,12 @@
 ?>
 <html>
 <head>
-	<title>HV Login page</title>
+	<title>HV Register page</title>
 	<meta charset="UTF-8">
 </head>
 <body>
 	<center>
-		<h1>Logi sisse</h1>
+		<h1>Registreeri</h1>
 			<form action="login.php" method="post">
 				Kasutajanimi:<br>
 				<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?><br>
@@ -54,6 +54,6 @@
 				<input type="submit" value="Logi sisse">
 			</form>
 	</center>
-<center><a href="registreeri.php">Pole kasutajat? Registreeri siin!</a></center>
+<center><a href="login.php">Kasutaja olemas? Logi sisse siin!</a></center>
 </body>
 </html>
