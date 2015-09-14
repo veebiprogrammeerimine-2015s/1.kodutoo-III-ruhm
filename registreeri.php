@@ -55,5 +55,7 @@
 			</form>
 	</center>
 <center><a href="login.php">Kasutaja olemas? Logi sisse siin!</a></center>
+<br>
+<center><p>Plaanin teha jackpot lehekülje. Idee seisneb selles, et teed kasutaja ja logid sisse. Iga kasutaja saab 1000 krediiti. Siis algab jackpot pihta. Näiteks 10 inimest panustavad X summa ja sellest sõltub poti suurus. Panustuse ja kogupoti suhe on iga inimese võiduvõimalus. Näiteks panustad 1000 krediiti ja kokku on potis 10 000 krediiti - sinu võiduvõimalus on 10%.</p></center>
 </body>
 </html>
