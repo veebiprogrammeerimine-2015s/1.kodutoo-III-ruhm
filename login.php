@@ -2,6 +2,7 @@
 	
 	// LOGIN.PHP
 	
+	$name_error = "";
 	$email_error = "";
 	$password_error = "";
 	
@@ -31,7 +32,9 @@
 			}
 			
 		}
-	}
+		
+		
+	}	
 	
 ?>
 <html>
@@ -47,7 +50,17 @@
 		<input type="submit" value="Log in">
 	</form>	
 		
-	<h2>Create user</h2>
+	<h2>Sign up</h2>
+	
+	<form action="signup.php" method="post">
+		<input name="fullname" type="text" placeholder="Full Name"> <?php echo $name_error; ?> <br><br>
+		<input name="username" type="name" placeholder="Username"> <?php echo $name_error; ?> <br><br>
+		<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?> <br><br>
+		<input name="password" type="password" placeholder="Parool"> <?php echo $password_error; ?> <br><br>
+		<input type="submit" value="Log in">
+	</form>	
+	
+	
 	
 </body>
 
