@@ -40,7 +40,7 @@
 ?>
 <html>
 <head>
-	<title>Facebook login page</title>
+	<title>HV Login page</title>
 	<meta charset="UTF-8">
 </head>
 <body>
@@ -52,6 +52,16 @@
 				Parool:<br>
 				<input name="password" type="password" placeholder="Parool"> <?php echo $password_error; ?><br><br>
 				<input type="submit" value="Logi sisse">
+			</form>
+	</center>
+	<center>
+		<h1>Registreeri</h1>
+			<form action="login.php" method="post">
+				Kasutajanimi:<br>
+				<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?><br>
+				Parool:<br>
+				<input name="password" type="password" placeholder="Parool"> <?php echo $password_error; ?><br><br>
+				<input type="submit" value="Registreeri">
 			</form>
 	</center>
 </body>
