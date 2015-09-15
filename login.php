@@ -42,5 +42,11 @@
 	
 	<h2>Create user</h2>
 	<form action="login.php" method="post" >
+	<input name="email" type="email" placeholder="Email ">
+	<input name="pass" type="password" placeholder="Parool ">
+	<input name="name" type="first_name" placeholder="Eesnimi">
+	<input name="name" type="last_name" placeholder="Perekonnanimi">
+	<input name="date" type="date" placeholder="Sünniaeg ">
+	</form>
 </body>
 </html>
