@@ -1,43 +1,72 @@
 <?php
-
-		// LOGIN.PHP
-		//echo $_POST["email"];
+	
+	// LOGIN.PHP
+	
+	// errori muutujad peavad igal juhul olemas olema 
+	$email_error = "";
+	$password_error = "";
+	
+	// kontrollime et keegi vajutas input nuppu
+	if($_SERVER["REQUEST_METHOD"] == "POST") {
 		
+		//echo "keegi vajutas nuppu";
 		
+		//kontrollin et e-post ei ole tühi
+		if ( empty($_POST["email"]) ) {
+			$email_error = "See väli on kohustuslik";
+		}
 		
-		// Kontrollime et keegi vajutas input nuppu
-		if($_SERVER["REQUEST_METHOD"] == "POST") {
+		//kontrollin, et parool ei ole tühi
+		if ( empty($_POST["password"]) ) {
+			$password_error = "See väli on kohustuslik";
+		} else {
 			
-			//echo "keegi vajutas nuppu";
+			// kui oleme siia jõudnud, siis parool ei ole tühi
+			// kontrollin, et oleks vähemalt 8 sümbolit pikk
+			if(strlen($_POST["password"]) < 8) { 
 			
-			//kontrollin et e-post ei ole tühi
-			$email_error = "";
-			if ( empty($_POST["email"] ) ) {
+				$password_error = "Peab olema vähemalt 8 tähemärki pikk!";
+			
+			//Kontrollin, et perekonnanimi ei ole tühi
+			if ( empty($_POST["Omanimi"]) ) {
+				$omanimi_error = "See väli on kohustuslik";
 			}
-				$email_error = "see väli on kohustuslik";
-			}
-				
-		
 			
+			}
+	
+		}
 		
-		
+	}
+	
 ?>
 <html>
 <head>
-		<title>login page</title>
+	<title>Login page</title>
 </head>
 <body>
+	
+	<h2>Log in</h2>
 		
-		<h2>log in</h2>
-			
 		<form action="login.php" method="post" >
-			<input name="e-post" type="email" placeholder="e-post"> <?php  echo $email_error; ?> <br><br>
-			<input name="password" type="password" placeholder="parool">  <br><br>
-			<input type="submit" value="log in">
+			<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?><br><br>
+			<input name="password" type="password" placeholder="Parool"> <?php echo $password_error; ?> <br><br>
+			<input type="submit" value="Log in">
 		</form>
+	
+	<h2>Create user</h2>
+	
+		<form action="signup.php" method="post" >
+			<input name="oma nimi" type="omanimi" placeholder="Eesnimi"> <?php echo $eesnimi_error; ?><br><br>
+			<input name="oma nimi" type="omanimi" placeholder="perekonnanimi"> <?php echo $omanimi_error; ?> <br><br>
+			<input name="kuupäev" type="kuupäev" placeholder="kuupäev"> <?php echo $kuupäev_error; ?><br><br>
+			<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?><br><br>
+			<input name="password" type="password" placeholder="Parool"> <?php echo $password_error; ?> <br><br>
+			<input type="submit" value="sign in">
+		</form>
+	
+	
+	
+
 		
-			
-			
-		<h2>Create user</h2>
 </body>
 </html>
