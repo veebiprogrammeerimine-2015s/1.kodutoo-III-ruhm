@@ -35,5 +35,8 @@
 		<input type ="submit" value="Logi sisse">
 	</form>
 	<h2>Create user</h2>
+	<form action="createuser.php" method="post" >
+		<input name="firstname" type="firstname" placeholder="Eesnimi"> <?oho echo $name_error; ?> <br><br>
+	</form>	
 </body>
 </html>
