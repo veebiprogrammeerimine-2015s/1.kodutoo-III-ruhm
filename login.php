@@ -37,10 +37,17 @@
 				
 				
 			}
-			
-		
-		
-		
+			if (empty($_POST["password2"])) {
+				
+				$pw_error = "See väli on kohustuslik";
+				
+				
+			} else {
+				
+				//parool ei ole tühi ja kontrollime mitu tähemärki on
+				if(strlen($_POST["password2"]) < 8 ) {
+					$pw_error = "Parool peab olema vähemalt 8 tähemärki pikk!";
+				}
 		
 		
 		}
@@ -67,8 +74,8 @@
 		
 	<form action="login.php" method="post" >
 		<input type="text" name="username" placeholder="Kasutajanimi"> <?php  echo $email_error;  ?> <br><br>
-		<input type="password" name="password" placeholder="Parool"> <?php  echo $pw_error;  ?> <br><br>
-		<input type="password" name="password" placeholder="Sisestage parool uuesti"> <?php  echo $pw_error;  ?> <br><br>
+		<input type="password" name="password2" placeholder="Parool"> <?php  echo $pw_error;  ?> <br><br>
+		<input type="password" name="password2" placeholder="Sisestage parool uuesti"> <?php  echo $pw_error;  ?> <br><br>
 		<input type="submit" value="Registreeri"> <br><br>
 	</form>
 	
