@@ -5,6 +5,10 @@
 	$email_error = "";
 	$password_error = "";
 	
+	
+	
+	
+	
 	//kontrollime, et keegi vajutas input nuppu
 	if($_SERVER["REQUEST_METHOD"] == "POST" ) {
 		
@@ -30,7 +34,7 @@
 				$password_error = "Parool on liiga lühike, peab olema vähemalt 8 tähemärki pikk!";
 			}
 		}
-
+		if
 	}
 ?>
 
@@ -41,24 +45,32 @@
 </head>
 
 <body>
+
+		<span style="color:#80BFFF">
+		
 	<h2>Log in</h2>
 		
 		<form action="login.php" method="post" >
 			<input name="email" type="email" placeholder="e-mail"> <?php echo $email_error; ?> <br><br>
 			<input name="password" type="password" placeholder="password"> <?php echo $password_error; ?> <br><br>
-			<input type="submit" value="Log in">
+			<input type="submit" value="Log in" >
 		</form>
 	
+
+		<body style="background-color:#CCEEFF">
+		
+		
+		<span style="color:#80BFFF">
+
 	<h2>Create user</h2>
 		
 		<form action="create_user.php" method="post" >
 			<input name="email" type="email" placeholder="e-mail" > <br><br>
-			<input name="username" type="username" placeholder="username" > <br><br>
-			<input name="password" type="password" placeholder="password" > <br><br>
-			<input name="password" type="password" placeholder="repeat password" > <br><br><br><br>
+			<input name="password" type="password" placeholder="repeat password" > <?php echo $password_error; ?> <br><br><br><br>
 			<input name="name" type="name" placeholder="first name" > <br><br>
 			<input name="name" type="name" placeholder="last name" > <br><br>
 			<input type="submit" value="Create user">
+		</form>	
 			
 			
 			
