@@ -51,6 +51,13 @@
 	
 	<h2>Create user</h2>
 	
+		<form>
+			<input name="email" type="email" placeholder="E-post">
+			<input name="password" type="password" placeholder="parool">
+			<input name="password" type="password" placeholder="parool uuesti">
+			<input type="submit" value="Registreeru"> <br><br>
+		</form>
+	
 </body>
 
 </html>
