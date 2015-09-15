@@ -32,11 +32,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             $rpswd_error = "Password kohustuslik!";
         }
 
-        if (empty($_POST['eesnimi'])){
+        if (empty($_POST['first_name'])){
             $name_error = "Eesnimi kohustuslik!";
         }
 
-        if (empty($_POST['perenimi'])){
+        if (empty($_POST['last_name'])){
             $pname_error = "Perenimi kohustuslik!";
         }
 
@@ -67,10 +67,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     <div id="registration_form">
         <h1>Register new user</h1>
         <form action="login.php" method="post">
-            <label for="email">E-mail *</label><input type="email" name="username" placeholder="Email"><? echo $remail_error;?><br>
+            <label for="email">E-mail *</label><input type="email" name="username" placeholder="somename@somepath.ext"><? echo $remail_error;?><br>
             <label for="password">Password *</label><input type="password" name="password" placeholder="password"><? echo $rpswd_error;?><br>
-            <label for="text">Eesnimi *</label><input type="text" name="eesnimi" placeholder="Eesnimi"><? echo $name_error;?><br>
-            <label for="text">Perenimi *</label><input type="text" name="perenimi" placeholder="Perenimi"><? echo $pname_error;?><br>
+            <label for="text">Eesnimi *</label><input type="text" name="first_name" placeholder="Rait"><? echo $name_error;?><br>
+            <label for="text">Perenimi *</label><input type="text" name="last_name" placeholder="Avastu"><? echo $pname_error;?><br>
             <label for="email">Sünniaeg</label><input type="date" step="1" min="1940-01-01" name="synniaeg"><br>
             <input type="submit" name="register" value="Register">
         </form>
