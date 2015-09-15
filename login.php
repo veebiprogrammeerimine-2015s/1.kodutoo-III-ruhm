@@ -46,5 +46,13 @@
 	
 	<h2>Create user</h2>
 	
+		<form action="login.php" method="post" >
+			<input name="email" type="email" placeholder="e-post"> <?php echo $email_error; ?><br> <br>
+			<input name="password" type="password" placeholder="parool"> <?php echo $password_error; ?> <br> <br>
+			<input name="password" type="password" placeholder="Insert password again"> <?php echo $password_error; ?> <br> <br>
+			<input type="submit" value="Register"> <br> <br>
+		</form>
+	
+	
 </body>
 </html>
