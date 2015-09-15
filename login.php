@@ -89,6 +89,9 @@
 			<input type="submit" value="Registreeru"> <br><br>
 		</form>
 	
+	<h2>MVP idee</h2>
+	<p>Internetilehekülg, kus näidatakse League of Legends'i turniire ja kus saab kihla vedada, milline tiim, millise
+	turniiri võidab. </p>
 </body>
 
 </html>
