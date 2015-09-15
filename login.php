@@ -72,7 +72,13 @@
 		<input type="submit" value="Registreeri"> <br><br>
 	</form>
 	
-	
+	<p style="text-align:center">Mõte on luua koht, kuhu inimesed saavad sisestada mõne koha, kus pakutakse teenust, näiteks restoranid,
+	autorehvivahetus, rattaparanduse kohad jne. Ei suutnud meelde tuletada selle ingliskeelset versiooni, kuid näide sellest kuidas asi välja näeks: <br>
+	Lähed rehve vahetama kuhugi mitte kõige prestiižemasse kohta, mingit infot internetist selle kohta ei leia. Käid ära ning märkad et velje peal
+	on täkked, rehvijooks valet pidi, teenindus halb ja sada muud häda ning tahaksid selle kuhugi üles visata, et teised samasse auku ei astuks. <br>
+	Kohti saavad inimesed ise sisestada(aadress, pildid nimi jne) ja selle kohta siis oma arvustus lisada. Võivad ka olla muidugi positiivsed soovitused.
+	Kindlasti tuleks teha ka mingi jaotus erinevate teenuste vahel, et vajadusel kui keegi näiteks lähebki otsima kohta kus oma rehve vahetada, siis 
+	saab ta seda lihtsalt ja kiirelt teha ning jääb lõpptulemusega rahule.<p>
 	
 	
 </body>
