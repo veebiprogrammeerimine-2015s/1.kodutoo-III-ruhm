@@ -1,0 +1,30 @@
+body{
+    text-align: center;
+}
+
+#container{
+    text-align: justify;
+    width: 700px;
+    margin: auto;
+}
+
+#login_form{
+    border: 2px solid #ccc;
+    float: left;
+    width: 206px;
+    height: 300px;
+    padding: 5px;
+}
+#registration_form{
+    border: 2px solid #ccc;
+    float: left;
+    width: 466px;
+    height: 300px;
+    padding: 5px;
+}
+#text{
+    float: left;
+    width: 686px;
+    border: 2px solid #ccc;
+    padding: 5px;
+}
