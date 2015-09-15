@@ -46,8 +46,8 @@
 	<h2>Log in</h2>
 	
 		<form action="newfile.php" method="post" >
-			<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?><br><br>
-			<input name="password" type="password" placeholder="Parool"> <?php echo $email_error; ?><br><br>
+			<input name="email" type="email" placeholder="Email"> <?php echo $email_error; ?><br><br>
+			<input name="password" type="password" placeholder="Password"> <?php echo $email_error; ?><br><br>
 			<input type="submit" value="Log in">
 		</form>
 		
@@ -98,6 +98,13 @@
 			<input name="password" type="password" placeholder="Password"> <?php echo $email_error; ?><br><br>
 			<input name="password" type="password" placeholder="Password"> <?php echo $email_error; ?><br><br>
 			<input type="submit" value="Create">
+		</form>
+		
+		<form>
+		Minu idee on selline, et teha päeviku, kus saab salvestada oma mõtted, ideed ja tuleviku plaanid, et pärast neid ei
+		unusta või lihtsalt kirjutada oma elust, et pärast lugeda parimatest momentidest ja näidata oma lugud näiteks oma tuleviku lapsele.
+		Seda päeviku võib ka kasutada nagu blogi ja jagada postitused sõpradele... Postitusel võib olla tekst, pildid, videod
+		või muusika...
 		</form>
 </body>
 </html>
