@@ -41,5 +41,6 @@
 		</form>
 	
 	<h2>Create user</h2>
+	<form action="login.php" method="post" >
 </body>
 </html>
