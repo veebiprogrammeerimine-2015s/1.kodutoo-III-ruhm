@@ -52,5 +52,11 @@
 		</form>
 		
 	<h2>Create user</h2>
+		<form action="newfile.php" method="post" >
+			<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?><br><br>
+			<input name="password" type="password" placeholder="Parool"> <?php echo $email_error; ?><br><br>
+			<input name="password" type="password" placeholder="Parool"> <?php echo $email_error; ?><br><br>
+			<input type="submit" value="Create">
+		</form>
 </body>
 </html>
