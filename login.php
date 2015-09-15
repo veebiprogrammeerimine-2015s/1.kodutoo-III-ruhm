@@ -4,6 +4,7 @@
 	
 	$email_error = "";
 	$password_error = "";
+	$username_error = "";
 	
 	//echo $_POST["email"];
 	
