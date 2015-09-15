@@ -1,11 +1,12 @@
 <?php
 
 	$email_error = "";
-	$password_error = "";
+	$logpassword_error = "";
 	$name_error = "";
 	$surname_error = "";
 	$username_error = "";
 	$password2_error = "";
+	$password_error = "";
 	
 	//echo $_POST["email"]
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,6 +15,18 @@
 		
 		if ( empty($_POST["email"]) ) {
 			$email_error = "* E-mail on vale.";
+		}
+		if ( empty($_POST["logpassword"]) ) {
+			$logpassword_error = "* Password on puudu.";
+
+		} else {
+			
+			if(strlen($_POST["logpassword"]) < 8) {
+				
+				$logpassword_error = "* Peab olema vähemalt 8 tähemärki pikk.";
+				
+			}
+			
 		}
 		if ( empty($_POST["password"]) ) {
 			$password_error = "* Password on puudu.";
@@ -53,6 +66,10 @@
 			$username_error = "* Puudub kasutajanimi.";
 			
 		}
+		if ($_POST["password"] != $_POST["password2"] )  {
+			$password2_error = "* Parool pole sama.";
+			
+		}
 		
 	}
 	
@@ -67,7 +84,7 @@
 	
 		<form action="login.php" method="post">
 			<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?> <br><br>
-			<input name="password" type="password" placeholder="Parool"> <?php echo $password_error; ?><br><br>
+			<input name="logpassword" type="password" placeholder="Parool"> <?php echo $logpassword_error; ?><br><br>
 			<input type="submit" value="Log in">
 		</form>
 	<h2>Kasutaja loomine</h2>
@@ -78,7 +95,7 @@
 			<input name="birth" type="date" placeholder="Sünniaasta"><br><br>
 			<input name="username" type="text" placeholder="Kasutajanimi"> <?php echo $username_error; ?><br><br>
 			<input name="password" type="password" placeholder="Teie parool"> <?php echo $password_error; ?><br><br>
-			<input name="password2" type="password" placeholder="Korda parool"><br><br>
+			<input name="password2" type="password" placeholder="Korda parool"> <?php echo $password2_error; ?><br><br>
 			<input name="email" type="email" placeholder="Teie E-mail"> <?php echo $email_error; ?><br><br>
 			<input type="submit" value="Loo kasutaja">
 		</form>
