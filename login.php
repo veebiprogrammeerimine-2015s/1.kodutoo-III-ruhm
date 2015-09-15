@@ -4,6 +4,8 @@
 	$password_error = "";
 	$name_error = "";
 	$surname_error = "";
+	$username_error = "";
+	$password2_error = "";
 	
 	//echo $_POST["email"]
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -47,6 +49,11 @@
 				
 			}
 		}
+		if ( empty($_POST["username"]) ) {
+			$username_error = "* Puudub kasutajanimi.";
+			
+		}
+		
 	}
 	
 ?>
@@ -69,7 +76,7 @@
 			<input name="name" type="text" placeholder="Eesnimi"> <?php echo $name_error; ?><br><br>
 			<input name="surname" type="text" placeholder="Perekonnanimi"> <?php echo $surname_error; ?><br><br>
 			<input name="birth" type="date" placeholder="Sünniaasta"><br><br>
-			<input name="username" type="text" placeholder="Kasutajanimi"><br><br>
+			<input name="username" type="text" placeholder="Kasutajanimi"> <?php echo $username_error; ?><br><br>
 			<input name="password" type="password" placeholder="Teie parool"> <?php echo $password_error; ?><br><br>
 			<input name="password2" type="password" placeholder="Korda parool"><br><br>
 			<input name="email" type="email" placeholder="Teie E-mail"> <?php echo $email_error; ?><br><br>
