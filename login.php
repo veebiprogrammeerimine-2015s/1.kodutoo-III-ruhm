@@ -58,7 +58,7 @@
 	
 	<h2>Create user</h2>
 	
-		<form>
+		<form action="login.php" method="post"> 
 			<input name="name" type="text" placeholder="Teie nimi"> <br><br>
 			<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?> <br><br>
 			<input name="password" type="password" placeholder="parool"> <?php echo $password_error; ?> <br><br> 
