@@ -52,6 +52,7 @@
 	<h2>Create user</h2>
 	
 		<form>
+			<input name="name" type="text" placeholder="Teie nimi">
 			<input name="email" type="email" placeholder="E-post">
 			<input name="password" type="password" placeholder="parool">
 			<input name="password" type="password" placeholder="parool uuesti">
