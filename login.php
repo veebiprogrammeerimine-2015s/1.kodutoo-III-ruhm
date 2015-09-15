@@ -7,11 +7,11 @@
 		
 		//echo "keegi vajutas nuppu";
 		
-		if (empty($_POST["email"]) )  {
-			$email_error = "see väli on kohustuslik";
+	if (empty($_POST["email"]) )  {
+	$email_error = "see väli on kohustuslik";
 	
 	}
-		if (empty($_POST["password"]) )  {
+	if (empty($_POST["password"]) )  {
 			$password_error = "see väli on kohustuslik";
 		} else {
 			//siis pole parool tyhi
@@ -37,36 +37,65 @@
 
 
 	<h2>Registreeru</h2>
-	<?php
-if(isset($post['submit'])){
-	$email1 = $_POST ['email1'];
-	$email2 = $_POST ['email2'];
-	$parool1 = $_POST ['parool1'];
-	$parool2 = $_POST ['parool2'];
-	if ($email1 == $email2) {
-		if ($parool1 == $parool2) {
-	}else{
-		echo "vabandan, su email ei ole samad <br><br>";
-		exit();
-}
-	}else{
-		echo " vabandan su emailid ei ole samad <br><br>";
-}
-}else{
-$form = <<<EOT
-<form action="register.php" method="POST"><br><br>
-<input name="nimi1" type="text" placeholder="eesnimi" /><br><br>
-<input name="nimi2" type="text" placeholder="perekonna nimi" /><br><br>
-<input name="kasutajanimi" type="text" placeholder="kasutajanimi" /><br><br>
-<input name="email1" type="email" placeholder="Email" /><br><br>
-<input name="email2" type="email" placeholder="uuesti Email" /><br><br>
-<input name="parool1" type="password" placeholder="Parool" /><br><br>
-<input name="parool2" type="password" placeholder="uuesti parool" /><br><br>
-<input type="submit" value="Registreeri" name="registreeru" /><br><br>
-EOT;
-echo $form;
+<?php
+	$nimi1_error = "";
+	$nimi2_error = "";
+	$kasutajanimi_error = "";
+	$email1_error = "";
+	$email2_error = "";
+	$parool1_error = "";
+	$parool2_error = "";
+
+	if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+
+		if (empty($_POST["nimi1"]) )  {
+	$nimi1_error = "see väli on kohustuslik";
+	
+	}if (empty($_POST["nimi2"]) )  {
+	$nimi2_error = "see väli on kohustuslik";
+	
+	}if (empty($_POST["kasutajanimi"]) )  {
+	$kasutajanimi_error = "see väli on kohustuslik";
+	}
+		
+	if (empty($_POST["email1"]) )  {
+	$email1_error = "see väli on kohustuslik";
+	
+	}
+	if (empty($_POST["email2"]) )  {
+	$email2_error = "see väli on kohustuslik";
+	
+	}
+	if (empty($_POST["parool1"]) )  {
+			$parool1_error = "see väli on kohustuslik";
+	} 		
+	if (empty($_POST["parool2"]) )  {
+			$parool2_error = "see väli on kohustuslik";
+		} else {
+			//siis pole parool tyhi
+			if(strlen($_POST["parool2"]) < 8)	{
+				$parool2_error = "Peab olema vähemalt 8 tähemärki pikk!";
+			}
+			if(strlen($_POST["parool1"]) < 8)	{
+				$parool1_error = "Peab olema vähemalt 8 tähemärki pikk!";
+			}
+		}			
 }
 ?>
+
+<form action="login.php" method="POST"><br><br>
+<input name="nimi1" type="text" placeholder="eesnimi" /><?php echo $nimi1_error;  ?><br><br>
+<input name="nimi2" type="text" placeholder="perekonna nimi" /><?php echo $nimi2_error;  ?><br><br>
+<input name="kasutajanimi" type="text" placeholder="kasutajanimi" /><?php echo $kasutajanimi_error;  ?><br><br>
+<input name="email1" type="email" placeholder="Email" /><?php echo $email1_error;  ?><br><br>
+<input name="email2" type="email" placeholder="uuesti Email" /><?php echo $email2_error;  ?><br><br>
+<input name="parool1" type="password" placeholder="Parool" /><?php echo $parool1_error;  ?><br><br>
+<input name="parool2" type="password" placeholder="uuesti parool" /><?php echo $parool2_error;  ?><br><br>
+<input type="submit" value="Registreeri" name="registreeru" /><br><br>
+
+
+
 </body>
 
 
