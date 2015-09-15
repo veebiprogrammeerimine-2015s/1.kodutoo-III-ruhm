@@ -14,6 +14,11 @@
 		if (empty($_POST["email"]) ) {
 			$email_error = "See väli on kohustuslik";
 			}
+			
+		if (empty($_POST["username"]) ) {
+			$username_error = "See väli on kohustuslik";
+			}
+		
 		
 		// kontrollin, et parool ei ole tühi
 		if (empty($_POST["password"]) ) {
@@ -39,6 +44,7 @@
 	<h2>Log in</h2>
 		
 		<form action="login.php" method="post" >
+			<input name="username" type="text" placeholder="username"> <?php echo $username_error; ?><br> <br>
 			<input name="email" type="email" placeholder="e-post"> <?php echo $email_error; ?><br> <br>
 			<input name="password" type="password" placeholder="parool"> <?php echo $password_error; ?> <br> <br>
 			<input type="submit" value="Log in"> <br> <br>
@@ -47,6 +53,7 @@
 	<h2>Create user</h2>
 	
 		<form action="login.php" method="post" >
+			<input name="username" type="text" placeholder="username"> <?php echo $username_error; ?><br> <br>
 			<input name="email" type="email" placeholder="e-post"> <?php echo $email_error; ?><br> <br>
 			<input name="password" type="password" placeholder="parool"> <?php echo $password_error; ?> <br> <br>
 			<input name="password" type="password" placeholder="Insert password again"> <?php echo $password_error; ?> <br> <br>
