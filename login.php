@@ -1,22 +1,16 @@
 <?php
 
 		//LOGIN.PHP
-		//echo $_POST["email"];
+		//tühjade väljade kontrolliks
 		$email_error = "";
 		$pw_error = "";
-		//kodune töö I
-		$user_error = "";
-		$email2_error = "";
-		$regpass_error = "";
-		$regpassrep_error = "";
-		
 		
 		//kontrollime et keegi vajutas input nuppu
 		if($_SERVER["REQUEST_METHOD"] == "POST") {
 			
-			//echo "keegi vajutas nuppu.";
 			
-			//kontrollin et e-post ei ole tühi
+			
+			//kontrollin et e-post, password ei ole tühi
 			
 			if (empty($_POST["email"])) {
 				
@@ -37,7 +31,7 @@
 				}
 				
 			}
-		if (empty($_POST["email"])) {
+		if (empty($_POST["username"])) {
 				
 				$email_error = "See väli on kohustuslik";
 				
@@ -72,9 +66,10 @@
 	<h2>Loo kasutaja</h2>
 		
 	<form action="login.php" method="post" >
-		<input type="email" name="email" placeholder="E-post"> <?php  echo $email_error;  ?> <br><br>
+		<input type="text" name="username" placeholder="Kasutajanimi"> <?php  echo $email_error;  ?> <br><br>
 		<input type="password" name="password" placeholder="Parool"> <?php  echo $pw_error;  ?> <br><br>
-		<input type="submit" value="Log in"> <br><br>
+		<input type="password" name="password" placeholder="Sisestage parool uuesti"> <?php  echo $pw_error;  ?> <br><br>
+		<input type="submit" value="Registreeri"> <br><br>
 	</form>
 	
 	
