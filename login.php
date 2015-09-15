@@ -3,6 +3,8 @@
 	//echo $_POST["email"];
 	$email_error = "";
 	$password_error = "";
+	$name_error = "";
+	//$password2_error= "";
 	
 	//kontrollime, et keegi vajutas input nuppu
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -33,6 +35,11 @@
 			
 		}
 		
+		if ( empty($_POST["name"])){
+			$name_error = "See väli on kohustuslik";
+			
+		}
+		
 	}
 
 ?>
@@ -52,10 +59,10 @@
 	<h2>Create user</h2>
 	
 		<form>
-			<input name="name" type="text" placeholder="Teie nimi">
-			<input name="email" type="email" placeholder="E-post">
-			<input name="password" type="password" placeholder="parool">
-			<input name="password" type="password" placeholder="parool uuesti">
+			<input name="name" type="text" placeholder="Teie nimi"> <br><br>
+			<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?> <br><br>
+			<input name="password" type="password" placeholder="parool"> <?php echo $password_error; ?> <br><br> 
+			<input name="password2" type="password" placeholder="parool uuesti"> <?php echo $password_error; ?> <br><br>
 			<input type="submit" value="Registreeru"> <br><br>
 		</form>
 	
