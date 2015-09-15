@@ -65,7 +65,7 @@
 	<h2>Create user</h2>
 		
 		<form action="create_user.php" method="post" >
-			<input name="email" type="email" placeholder="e-mail" > <br><br>
+			<input name="email" type="email" placeholder="e-mail" > <?php echo $email_error; ?> <br><br>
 			<input name="password" type="password" placeholder="repeat password" > <?php echo $password_error; ?> <br><br><br><br>
 			<input name="name" type="name" placeholder="first name" > <br><br>
 			<input name="name" type="name" placeholder="last name" > <br><br>
