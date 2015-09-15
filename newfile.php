@@ -53,9 +53,50 @@
 		
 	<h2>Create user</h2>
 		<form action="newfile.php" method="post" >
-			<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?><br><br>
-			<input name="password" type="password" placeholder="Parool"> <?php echo $email_error; ?><br><br>
-			<input name="password" type="password" placeholder="Parool"> <?php echo $email_error; ?><br><br>
+			<input name="name" type="name" placeholder="First name"> <?php echo $email_error; ?><br><br>
+			<input name="name" type="name" placeholder="Last name"> <?php echo $email_error; ?><br><br>
+			<?php
+			// Число
+			echo "<select name='sel_date'>";
+			$i = 1;
+			while ($i <= 31) {
+				echo "<option value='" . $i . "'>$i</option>";
+				$i++;
+			}
+			echo "</select>";
+			// Месяц
+			echo "<select name='sel_month'>";
+			$month = array(
+				"Jan",
+				"Feb",
+				"Mar",
+				"Apr",
+				"May",
+				"Jun",
+				"Jul",
+				"Aug",
+				"Sep",
+				"Oct",
+				"Nov",
+				"Dec"
+			);
+			foreach ($month as $m) {
+				echo "<option value='" . $m . "'>$m</option>";
+			}
+			echo "</select>";
+			// Год
+			echo "<select name='sel_year'>";
+			$j = 1920;
+			while ($j <= 2015) {
+				echo "<option value='" . $j . "'>$j</option>";
+				$j++;
+			}
+			echo "</select>";
+			?><br><br>
+			<input name="email" type="email" placeholder="Email"> <?php echo $email_error; ?><br><br>
+			<input name="email" type="email" placeholder="Re-enter email"> <?php echo $email_error; ?><br><br>
+			<input name="password" type="password" placeholder="Password"> <?php echo $email_error; ?><br><br>
+			<input name="password" type="password" placeholder="Password"> <?php echo $email_error; ?><br><br>
 			<input type="submit" value="Create">
 		</form>
 </body>
