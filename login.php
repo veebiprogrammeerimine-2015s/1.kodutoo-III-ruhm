@@ -26,8 +26,9 @@
 	}
 	
 ?>
-<html>
+<html lang="et">
 <head>
+	<meta charset="utf-8">
 	<title>Login page</title>
 </head>
 <body>
@@ -38,6 +39,17 @@
 			<input name="password" type="password" placeholder="Parool"> <?php echo $password_error; ?><br><br>
 			<input type="submit" value="Log in">
 		</form>
-	<h2>Create User</h2>
+	<h2>Kasutaja loomine</h2>
+	
+		<form action="login.php" method="post">
+			<input name="name" type="text" placeholder="Eesnimi"><br><br>
+			<input name="surname" type="text" placeholder="Perekonnanimi"><br><br>
+			<input name="birth" type="date" placeholder="Sünniaasta"><br><br>
+			<input name="username" type="text" placeholder="Kasutajanimi"><br><br>
+			<input name="password" type="password" placeholder="Kasutaja parool"> <?php echo $password_error; ?><br><br>
+			<input name="password2" type="password" placeholder="Korda parool"><br><br>
+			<input name="email" type="email" placeholder="Teie E-mail"> <?php echo $email_error; ?><br><br>
+			<input type="submit" value="Loo kasutaja">
+		</form>
 </body>
 </html>
