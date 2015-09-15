@@ -1,36 +1,53 @@
 <?php
-	$EMAIL = "";
-	$PASSWORD = "";
-	$AVATAR = "";
-	$SEX = "";
-	$ERRORMESSAGE = "";
+	//$EMAIL = "";
+	//$PASSWORD = "";
+	//$AVATAR = "";
+	//$SEX = "";
+	$PWERROR = "";
+	$EMAILERROR = "";
+	$PWERROR2 = "";
+	$EMAILERROR2 = "";
+	//$GENDERERROR = "";
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
-		echo "Har";
+		//echo "Har";
+		
+		if (empty($_POST["PASSWORD"]) && empty($_POST["PASSWORD2"] )){
+			$PWERROR = "REQUIRED FIELD";
+		}
+		if (empty($_POST["PASSWORD2"]) && empty($_POST["PASSWORD"] )){
+			$PWERROR2 = "REQUIRED FIELD";
+		}
+		
+		if (empty($_POST["EMAIL"]) && empty($_POST["EMAIL2"]) ){
+			$EMAILERROR = "REQUIRED FIELD";
+		}
+		if (empty($_POST["EMAIL"]) && empty($_POST["EMAIL2"]) ){
+			$EMAILERROR2 = "REQUIRED FIELD";
+		}
+		
 	}
 ?>
 <html>
 
 <head>
 <title>Login page testing</title>
-<div align="center">
-</div>
+
 </head>
 
-<body>
+<body bgcolor="#E6E6FA">
 	<h1>LOGIN PAGE</h1>
-	<br><br>
 	<form action ="loginpage.php" method="post">
-	<div align="center">
-		<input name="EMAIL" type=email placeholder="EMAIL"> <br><br>
-		<input name="PASSWORD" type=password placeholder="PASSWORD"> <br><br>
+	<div style="color:#ff3333">
+		<input name="EMAIL" type=email placeholder="EMAIL"> <?php echo $EMAILERROR; ?><br><br>
+		<input name="PASSWORD" type=password placeholder="PASSWORD"> <?php echo $PWERROR; ?><br><br>
 		<input type=submit value="Log in"><br>
 	</div>
-	<form>
+	</form>
 	<h1>REGISTRATION</h1>
 	<form action ="loginpage.php" method="post">
-	<div align="center">
-		<input name="EMAIL" type=email placeholder="EMAIL"> <br><br>
-		<input name="PASSWORD" type=password placeholder="PASSWORD"> <br><br>
+	<div style="color:#ff3333">
+		<input name="EMAIL2" type=email placeholder="EMAIL"> <?php echo $EMAILERROR2; ?><br><br>
+		<input name="PASSWORD2" type=password placeholder="PASSWORD"> <?php echo $PWERROR2; ?><br><br>
 		<select>
 			<option value="gender">Gender</option>
 			<option value="male">Male</option>
@@ -39,12 +56,17 @@
 		<br><br>
 	<!--<input name="SEX" type="radio" value="MALE">MALE<br><br>
 		<input name="SEX" type="radio" value="FEMALE">FEMALE<br><br>-->
-		<input name="AVATAR" type="file"  accept="image/*">
-		<input name="SALVESTA" type="submit"><br><br>
+		<div style="color:#000000">
+		<p>Avatar</p>
+		</div>
+		<input name="AVATAR" type="file" placeholder="AVATAR" accept="image/*"><br><br>
+	<!--<input name="SALVESTA" type="submit"><br><br>-->
 	<input type=submit value="Register"><br>
 	</div>
-	<form>
-	
+	</form>
+	<br><br><br><br>
+	<h2>MVP Idee</h2>
+	<p>Mõtlesin teha midagi IRC taolist? Erinevus oleks küll, et registreeritud kasutajaid kasutaks.</p>
 </body>
 
 </html>
