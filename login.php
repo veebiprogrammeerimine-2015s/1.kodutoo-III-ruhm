@@ -3,6 +3,7 @@
 	$email_error = "";
 	$password_error = "";
 	$name_error = "";
+	$surname_error = "";
 	
 	//echo $_POST["email"]
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -10,16 +11,16 @@
 		echo "Keegi vajutas nuppu!";
 		
 		if ( empty($_POST["email"]) ) {
-			$email_error = "*E-mail on vale.";
+			$email_error = "* E-mail on vale.";
 		}
 		if ( empty($_POST["password"]) ) {
-			$password_error = "Password on vale.";
+			$password_error = "* Password on puudu.";
 
 		} else {
 			
 			if(strlen($_POST["password"]) < 8) {
 				
-				$password_error = "Peab olema vähemalt 8 tähemärki pikk.";
+				$password_error = "* Peab olema vähemalt 8 tähemärki pikk.";
 				
 			}
 			
@@ -29,9 +30,20 @@
 			
 		} else {
 			
-			if(ctype_alpha($_POST["name"]) ){
+			if(ctype_alpha(str_replace(' ', '', $_POST["name"])) === false){
 				
-				$name_error = "Kasutada võib ainult tähti.";
+				$name_error = "* Kasutada võib ainult tähti.";
+				
+			}
+		}
+		if ( empty($_POST["surname"]) ) {
+			$surname_error = "* Perekonnanimi puudub.";
+			
+		} else {
+			
+			if(ctype_alpha(str_replace(' ', '', $_POST["surname"])) === false){
+				
+				$surname_error = "* Kasutada võib ainult tähti.";
 				
 			}
 		}
@@ -54,8 +66,8 @@
 	<h2>Kasutaja loomine</h2>
 	
 		<form action="login.php" method="post">
-			<input name="name" type="text" placeholder="Eesnimi"><?php echo $name_error = "";?><br><br>
-			<input name="surname" type="text" placeholder="Perekonnanimi"><br><br>
+			<input name="name" type="text" placeholder="Eesnimi"> <?php echo $name_error; ?><br><br>
+			<input name="surname" type="text" placeholder="Perekonnanimi"> <?php echo $surname_error; ?><br><br>
 			<input name="birth" type="date" placeholder="Sünniaasta"><br><br>
 			<input name="username" type="text" placeholder="Kasutajanimi"><br><br>
 			<input name="password" type="password" placeholder="Teie parool"> <?php echo $password_error; ?><br><br>
