@@ -13,24 +13,24 @@
 		
 		//echo "keegi vajutas nuppu";
 		if (empty($_POST["email"]) ) {
-			$email_error = "See väli on kohustuslik";
+			$email_error = "This field is required";
 			}
 			
 		if (empty($_POST["username"]) ) {
-			$username_error = "See väli on kohustuslik";
+			$username_error = "This field is required";
 			}
 		
 		
 		// kontrollin, et parool ei ole tühi
 		if (empty($_POST["password"]) ) {
-			$password_error = "See väli on kohustuslik";
+			$password_error = "This field is required";
 			} else {
 				
 				// kui oleme siia jõudnud, siis parool ei ole tühi enam
 				// kontrollin, et oleks vähemalt 8 sümbolit pikk
 				if(strlen($_POST["password"]) < 8) {
 					
-					$password_error = "Password peab olema vähemalt 8 tähemärki pikk";
+					$password_error = "Password must be at least 8 characters";
 					
 			}
 		}
@@ -46,8 +46,8 @@
 		
 		<form action="login.php" method="post" >
 			<input name="username" type="text" placeholder="username"> <?php echo $username_error; ?><br> <br>
-			<input name="email" type="email" placeholder="e-post"> <?php echo $email_error; ?><br> <br>
-			<input name="password" type="password" placeholder="parool"> <?php echo $password_error; ?> <br> <br>
+			<input name="email" type="email" placeholder="email"> <?php echo $email_error; ?><br> <br>
+			<input name="password" type="password" placeholder="Password"> <?php echo $password_error; ?> <br> <br>
 			<input type="submit" value="Log in"> <br> <br>
 		</form>
 	
@@ -55,8 +55,8 @@
 	
 		<form action="login.php" method="post" >
 			<input name="username" type="text" placeholder="username"> <?php echo $username_error; ?><br> <br>
-			<input name="email" type="email" placeholder="e-post"> <?php echo $email_error; ?><br> <br>
-			<input name="password" type="password" placeholder="parool"> <?php echo $password_error; ?> <br> <br>
+			<input name="email" type="email" placeholder="email"> <?php echo $email_error; ?><br> <br>
+			<input name="password" type="password" placeholder="Password"> <?php echo $password_error; ?> <br> <br>
 			<input name="password" type="password" placeholder="Insert password again"> <?php echo $password_error; ?> <br> <br>
 			<input type="submit" value="Register"> <br> <br>
 		</form>
