@@ -37,17 +37,12 @@
 				
 				
 			}
-			if (empty($_POST["password2"])) {
+			if (empty($_POST["password"])) {
 				
 				$pw_error = "See väli on kohustuslik";
-				
-				
-			} else {
-				
-				//parool ei ole tühi ja kontrollime mitu tähemärki on
-				if(strlen($_POST["password2"]) < 8 ) {
-					$pw_error = "Parool peab olema vähemalt 8 tähemärki pikk!";
-				}
+		
+		
+		
 		
 		
 		}
