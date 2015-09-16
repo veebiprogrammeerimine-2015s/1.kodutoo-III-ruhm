@@ -3,6 +3,7 @@
 	$email_error = "";
 	$password_error ="";
 	$name_error ="";
+	$birthday_error="";
 	
 	//echo $_POST["email"];  //ANNAB MUUTUJA MIS AADRESSIREAL ON
 	// kontrollime et keeegi vajutas input nuppu
@@ -23,11 +24,15 @@
 			if(strlen ($_POST["password"]) < 8){
 				$password_error = "Peab olema vähemalt 8 tähemärki pikk!";
 			}
-			if( empty($_POST["name"])){
-			$name_error = "See väli on kohustuslik";
 		}
+		if( empty($_POST["name"])){
+		$name_error = "See väli on kohustuslik";
 		}
-	}
+		if( empty($_POST["birthday"])){
+			$birthday_error = "See väli on kohustuslik";
+		}
+		
+}	
 	
 	
 	
@@ -40,10 +45,11 @@
 	<h2>Creat account</h2>
 	
 		<form action="user.php" method="post">
-			<input name="First" type="email" placeholder="Email"> <?php echo $email_error; ?><br><br>
-			<input name="name" type="name" placeholder="Name"> <?php echo $name_error; ?><br><br>
-			<input name="password"type="password" placeholder="Password"> <?php echo $password_error; ?> <br><br>
+			<input name="name" type="name" placeholder="First name"> <?php echo $name_error; ?>
+			<input name="name" type="name" placeholder="Last name"> <?php echo $name_error; ?><br><br>
 			<input name="email" type="email" placeholder="Email"> <?php echo $email_error; ?><br><br>
+			<input name="password"type="password" placeholder="Password"> <?php echo $password_error; ?> <br><br>
+			<input name="birthday" type="birthday" placeholder="Birthday"> <?php echo $birthday_error; ?><br><br>
 			<input type="submit" value="Log in">
 		</form>
 	<h2>Creat user</h2>
