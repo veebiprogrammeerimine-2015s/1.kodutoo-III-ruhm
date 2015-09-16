@@ -52,7 +52,7 @@
 <input type='hidden' name='submitted' id='submitted' value='1'/>
 <label for='name' >Nimi*: </label>
 <input type='text' name='name' id='name' maxlength="50" />
-<label for='email' >E-posti address*:</label>
+<label for='email' >E-posti aadress*:</label>
 <input type='text' name='email' id='email' maxlength="50" />
  
 <label for='username' >Kasutajanimi*:</label>
@@ -80,7 +80,7 @@
 <html>
 <head>
 <style>
-body {background-color:lightgreen}
+body {background-color:lightblue}
 h1   {color:black}
 p    {color:black}
 </style>
