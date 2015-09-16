@@ -99,5 +99,11 @@
 			<input name="email" type="email" placeholder="Teie E-mail"> <?php echo $email_error; ?><br><br>
 			<input type="submit" value="Loo kasutaja">
 		</form>
+	<h2>Minu idee!</h2>
+	<br>
+	<p>Mõtlesin teha 'guide' stiilis lehe ühe mmorpg jaoks. Mõte oleks selline, et pakuks teenust<br> 
+	mängu sisese abina ja ka lisaks juhiseid erinevatel teemadel. mis on sellele mängule kohased.<br>
+	Leht oleks (võibolla tulevikus :D) 'community-driven' ehk siis kasutajad saaksid contributida<br>
+	ise. Lisaks seal võib olla ka mingi foorum ning kasutajate registreerimis võimalus.</p>
 </body>
 </html>
