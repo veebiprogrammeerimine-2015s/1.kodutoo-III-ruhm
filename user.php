@@ -1,6 +1,6 @@
 <?php
 	//login.php
-	$email_error = "";
+	$name_error = "";
 	$password_error ="";
 	
 	//echo $_POST["email"];  //ANNAB MUUTUJA MIS AADRESSIREAL ON
@@ -11,7 +11,7 @@
 		//kontrollin et e-mail ei ole tühi
 		
 		if( empty($_POST["email"])){
-			$email_error = "See väli on kohustuslik";
+			$name_error = "See väli on kohustuslik";
 		}
 		//kontrollin, et parool ei ole tühi
 		
@@ -30,13 +30,13 @@
 ?>
 <html>
 <head>
-	<title>Login page</title>
+	<title>Signeup page</title>
 </head>
 <body>
-	<h2>Log in</h2>
+	<h2>Creat account</h2>
 	
 		<form action="login.php" method="post">
-			<input name="email" type="email" placeholder="E-mail"> <?php echo $email_error; ?><br><br>
+			<input name="name" type="name" placeholder="Name"> <?php echo $name_error; ?><br><br>
 			<input name="password"type="password" placeholder="Password"> <?php echo $password_error; ?> <br><br>
 			<input type="submit" value="Log in">
 		</form>
