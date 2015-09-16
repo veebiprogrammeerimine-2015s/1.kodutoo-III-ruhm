@@ -76,9 +76,6 @@
 			<input name="password" type="password" placeholder="password"> <?php echo $password_error; ?> <br><br>
 			<input type="submit" value="Log in" >
 		</form>
-	
-
-		<body style="background-color:#CCEEFF">
 		
 		
 		
