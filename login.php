@@ -25,15 +25,12 @@
 		
 		if (empty($_POST["password"]) ) {
 			$password_error = "See väli on kohustuslik";
-		} else {
+		} 
 			
 			
-			// kui oleme siia jõudnud, siis parool ei ole tühi
-			//kontrollin, et oleks vähemalt 8 sümbolit pikk
-			if(strlen($_POST["password"]) <8) {
-				$password_error = "Parool on liiga lühike, peab olema vähemalt 8 tähemärki pikk!";
-			}
-		}
+			
+			
+		
 
 	}
 	
@@ -78,8 +75,6 @@
 		</form>
 		
 		
-		
-
 	<h2>Create user</h2>
 		
 		<form action="create_user.php" method="post" >
