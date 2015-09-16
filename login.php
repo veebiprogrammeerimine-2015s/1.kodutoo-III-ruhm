@@ -13,7 +13,7 @@
 		
 		//echo "keegi vajutas nuppu";
 		
-		if (isset($_POST["login"])) {
+		if (isset($_POST["login"])) { // vajutati login nuppu
 			
 			//kontrollin, et e-post ei ole tühi
 			
@@ -38,7 +38,8 @@
 				}
 				
 			}
-		} else {
+		} else { //kui tuleb veel nuppe siis tuleks isset siia ja else muutub elseif'iks, enne {
+				// vajutati teist nuppu, hiljem peaks teist nuppu täpsustama aga hetkel kahe nupuga saab hakkama nii nagu on
 			if ( empty($_POST["cname"])){
 				$cname_error = "See väli on kohustuslik";
 				
