@@ -67,7 +67,7 @@
 			<input name="vanus" type="number_format" placeholder="Vanus"><br><br>
 			<input type="submit" value="Submit"> <br><br>
 		</form>	
-	<h2>Minu mvp idee. Lehekülg kus saab </h2>
+	<h2>Minu mvp idee. Lehekülg kus saab hmm...ma ei tea. Kasutajad saavad üles laadida oma joonistusi ja neid müüa. </h2>
 </body>
 
 
