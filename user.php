@@ -49,10 +49,10 @@
 	<h2>Creat account</h2>
 	
 		<form action="user.php" method="post">
-			<h3>Name</h3><br>
+			<p>Name</p>
 			<input name="name" type="name" placeholder="First name"> <?php echo $name_error; ?>
 			<input name="name" type="name" placeholder="Last name"> <?php echo $name_error; ?><br><br>
-			<h3>Email</h3><br>
+			<h3>Email</h3>
 			<input name="email" type="email" placeholder="something@something.stng"> <?php echo $email_error; ?><br><br>
 			<h3>Password</h3><br>
 			<input name="password"type="password" placeholder="Password"> <?php echo $password_error; ?> <br><br>
