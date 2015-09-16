@@ -83,7 +83,7 @@
 	<h2>Create user</h2>
 	
 		<form action="login.php" method="post"> 
-			<input name="cname" type="text" placeholder="Teie nimi"> <?php echo $cname_error; ?> <br><br>
+			<input name="cname" type="text" placeholder="Eesnimi Perekonnanimi"> <?php echo $cname_error; ?> <br><br>
 			<input name="cemail" type="email" placeholder="E-post"> <?php echo $cemail_error; ?> <br><br>
 			<input name="cpassword" type="password" placeholder="parool"> <?php echo $cpassword_error; ?> <br><br> 
 			<input type="submit" value="Registreeru"> <br><br>
