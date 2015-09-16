@@ -3,7 +3,7 @@
 	//echo $_POST["email"];
 	$email_error = "";
 	$password_error = "";
-	$name_error = "";
+	$name_error = "";  //seda pole vist vaja
 	$cname_error = "";
 	$cemail_error = "";
 	$cpassword_error = "";
