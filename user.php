@@ -55,7 +55,7 @@
 			<p>Email</p>
 			<input name="email" type="email" placeholder="something@something.stng"> <?php echo $email_error; ?><br><br>
 			<p>Password</p>
-			<input name="password"type="password" placeholder="Password"> <?php echo $password_error; ?> <br><br>
+			<input name="password"type="password" placeholder="********"> <?php echo $password_error; ?> <br><br>
 			<p>Birthday</p>
 			<input name="birthday" type="birthday" placeholder="day/month/year"> <?php echo $birthday_error; ?><br><br>
 			<p>Gender</p>
