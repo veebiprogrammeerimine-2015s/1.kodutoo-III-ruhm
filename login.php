@@ -25,17 +25,7 @@
 			//kontrollin, et parool ei ole tühi
 			if (empty($_POST["password"])) {
 				$password_error = "See väli on kohustuslik";
-			} else {
-				
-				//kui oleme siia jõudnud, siis parool ei ole tühi
-				//kontrollin, et oleks vähemalt 8 sümbolit pikk
-				if(strlen($_POST["password"]) <8) {
-					
-					$password_error = "Peab olema vähemalt 8 tähemärki pikk";
-				
-				}
-				
-			}
+			} 
 		}
 		else //registration field errors
 		{
@@ -93,6 +83,10 @@
 		<input name="create_password" type="password" placeholder="Parool"> <?php echo $create_password_error; ?> <br><br>
 		<input type="submit" value="Sisesta">
 	</form>	
+	<br>
+	<h3>MVP idee </h3>
+	<p>Ideeks on teha veebileht, sarnane 9gagile, kus kasutajad saavad postitada pilte ja gife ning neid kommenteerida. 
+	<br> Võib-olla veel eraldi sektor kuhu saab postitada flash loope muusikaga/häältega </p>
 	
 	</FONT>
 	
