@@ -52,13 +52,13 @@
 			<p>Name</p>
 			<input name="name" type="name" placeholder="First name"> <?php echo $name_error; ?>
 			<input name="name" type="name" placeholder="Last name"> <?php echo $name_error; ?><br><br>
-			<h3>Email</h3>
+			<p>Email</p>
 			<input name="email" type="email" placeholder="something@something.stng"> <?php echo $email_error; ?><br><br>
-			<h3>Password</h3><br>
+			<p>Password</p>
 			<input name="password"type="password" placeholder="Password"> <?php echo $password_error; ?> <br><br>
-			<h3>Birthday</h3><br>
+			<p>Birthday</p>
 			<input name="birthday" type="birthday" placeholder="day/month/year"> <?php echo $birthday_error; ?><br><br>
-			<h3>Gender</h3><br>
+			<p>Gender</p>
 			<input name="gender" type="gender" placeholder="male/female"> <?php echo $gender_error; ?><br><br>
 			<input type="submit" value="Log in">
 		</form>
