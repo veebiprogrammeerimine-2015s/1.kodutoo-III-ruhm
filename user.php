@@ -60,9 +60,9 @@
 			<input name="birthday" type="birthday" placeholder="day/month/year"> <?php echo $birthday_error; ?><br><br>
 			<p>Gender</p>
 			<input name="gender" type="gender" placeholder="male/female"> <?php echo $gender_error; ?><br><br>
-			<input type="submit" value="Log in">
+			<input type="submit" value="Creat user">
 		</form>
-	<h2>Creat user</h2>
+	
 </body>
 
 
