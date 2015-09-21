@@ -59,7 +59,7 @@
 	<h2>Logi sisse</h2>
 	
 	<form action="login.php" method="post" >
-		<input type="text" name="username" placeholder="Kasutajanimi"> <?php  echo $email_error;  ?> <br><br>
+		<input type="text" name="username" placeholder="Kasutajanimi"> <?php  echo $user_error;  ?> <br><br>
 		<input type="email" name="email" placeholder="E-post"> <?php  echo $email_error;  ?> <br><br>
 		<input type="password" name="password" placeholder="Parool"> <?php  echo $pw_error;  ?> <br><br>
 		<input type="submit" value="Log in"> <br><br>
@@ -68,9 +68,9 @@
 	<h2>Loo kasutaja</h2>
 		
 	<form action="login.php" method="post" >
-		<input type="text" name="username" placeholder="Kasutajanimi"> <?php  echo $email_error;  ?> <br><br>
+		<input type="text" name="username" placeholder="Kasutajanimi"> <?php  echo $user_error;  ?> <br><br>
 		<input type="password" name="password" placeholder="Parool"> <?php  echo $pw_error;  ?> <br><br>
-		<input type="email" name="email2" placeholder="E-mail"> <?php echo $email_error; ?> <br> <br>
+		<input type="email" name="email" placeholder="E-mail"> <?php echo $email_error; ?> <br> <br>
 		<input type="submit" value="Registreeri"> <br><br>
 	</form>
 	
