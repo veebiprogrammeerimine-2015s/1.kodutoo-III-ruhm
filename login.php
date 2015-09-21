@@ -3,6 +3,7 @@
 		//tühjade väljade kontrolliks
 		$email_error = "";
 		$pw_error = "";
+		$user_error = "";
 		
 		//kontrollime et keegi vajutas input nuppu
 		if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -46,7 +47,7 @@
 			
 		if (empty($_POST["username"])) {
 				
-				$email_error = "See väli on kohustuslik";
+				$user_error = "See väli on kohustuslik";
 				
 				
 			}
@@ -70,6 +71,7 @@
 	<h2>Logi sisse</h2>
 	
 	<form action="login.php" method="post" >
+		<input type="text" name="username" placeholder="Kasutajanimi"> <?php  echo $email_error;  ?> <br><br>
 		<input type="email" name="email" placeholder="E-post"> <?php  echo $email_error;  ?> <br><br>
 		<input type="password" name="password" placeholder="Parool"> <?php  echo $pw_error;  ?> <br><br>
 		<input type="submit" value="Log in"> <br><br>
