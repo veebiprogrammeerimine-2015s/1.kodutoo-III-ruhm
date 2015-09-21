@@ -66,7 +66,7 @@
 	<form action="login.php" method="post" >
 		<input type="text" name="username" placeholder="Kasutajanimi"> <?php  echo $email_error;  ?> <br><br>
 		<input type="password" name="password" placeholder="Parool"> <?php  echo $pw_error;  ?> <br><br>
-		<input type="password" name="password" placeholder="Sisestage parool uuesti"> <?php  echo $pw_error;  ?> <br><br>
+		<input type="email" name="email" placeholder="E-mail"> <?php echo $email_error; ?> <br> <br>
 		<input type="submit" value="Registreeri"> <br><br>
 	</form>
 	
