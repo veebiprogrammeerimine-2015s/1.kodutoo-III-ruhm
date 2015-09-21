@@ -20,7 +20,7 @@
 		}
 		
 		//kontrollin, et parool ei ole tühi
-		if(empty($_POST[$password]) ){
+		if(empty($_POST[$password])){
 			$password_error = "See väli on kohustuslik.";
 		}else{
 			
@@ -32,6 +32,7 @@
 			}
 		}
 	}
+	//mvp-tahaksin teha midagi Instagram´i laadset. Lehe, kus saaks pilte üles laadida.
 ?>
 <html>
 <head>
@@ -52,8 +53,7 @@
 			<input name="login" type="sumbit" value="Create">
 	
 		</form>
+		
 </body>
 
 </html>
-
-mvp-tehaksin teha midagi Instagram´i laadset. Lehe, kus saaks pilte üles laadida.
