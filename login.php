@@ -1,5 +1,4 @@
 <?php
-
 		//LOGIN.PHP
 		//tühjade väljade kontrolliks
 		$email_error = "";
@@ -37,9 +36,7 @@
 				
 				
 			}
-			if (empty($_POST["password"])) {
-				
-				$pw_error = "See väli on kohustuslik";
+			
 		
 		
 		
@@ -50,7 +47,6 @@
 		
 		
 		
-
 ?>
 <html>
 <head>
@@ -69,8 +65,8 @@
 		
 	<form action="login.php" method="post" >
 		<input type="text" name="username" placeholder="Kasutajanimi"> <?php  echo $email_error;  ?> <br><br>
-		<input type="password" name="password2" placeholder="Parool"> <?php  echo $pw_error;  ?> <br><br>
-		<input type="password" name="password2" placeholder="Sisestage parool uuesti"> <?php  echo $pw_error;  ?> <br><br>
+		<input type="password" name="password" placeholder="Parool"> <?php  echo $pw_error;  ?> <br><br>
+		<input type="password" name="password" placeholder="Sisestage parool uuesti"> <?php  echo $pw_error;  ?> <br><br>
 		<input type="submit" value="Registreeri"> <br><br>
 	</form>
 	
