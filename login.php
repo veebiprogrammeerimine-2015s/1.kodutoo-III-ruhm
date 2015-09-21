@@ -1,4 +1,7 @@
 <?php
+
+	// Üsna ebaoriginaalne idee, aga mingi algeline social network kus saab kasutajaid teha, postitusi teha/pilte jagada ja võibolla on mõned algelised mängud ka seal
+	
 	// LOGIN.PHP
 	// errori muutujad peavad enne if'i olemas olema :)
 	
