@@ -5,6 +5,11 @@
 	
 	$email_error = "";
 	$password_error = "";
+	$name_error = "";
+	
+	//muutujad ab väärtuste jaoks
+	$email = "";
+	$name = "";
 	//kontrollime, et keegi vajutas input nuppu.
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 		//echo "Keegi vajutas nuppu";
@@ -41,8 +46,14 @@
 			<input type="submit" value="Log in"> 
 		</form>
 		
-		
-	<h2>Create user</h2>
+	<h2>Kasutaja loomine</h2>
+		<form action="login.php" method="post">
+			<input name="name" type="text" placeholder="Eesnimi Perekonnanimi" value="<?php echo $name; ?>">* <?php echo$name_error; ?><br><br>
+			<input name="login" type="sumbit" value="Create">
+	
+		</form>
 </body>
 
 </html>
+
+mvp-tehaksin teha midagi Instagram´i laadset. Lehe, kus saaks pilte üles laadida.
