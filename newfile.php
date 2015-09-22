@@ -2,39 +2,79 @@
 
 	// LOGIN.PHP
 	
-	// errori muutujad peavad igal juhul olemas olema
 	$email_error = "";
 	$password_error = "";
 	
-	//echo $_POST["email"];
+	$name_error = "";
 	
-	//kontrollime et keegi vajutas input nuppu
+	$firstname = "";
+	$lastname = "";
+	
+	$email = "";
+	$name = "";
+	
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 		
-		//echo "keegi vajutas nuppu";
-		
-		//kontrollin, et e-post ei ole tuhi
-		
-		$email_error = "";
-		
-		if (empty($_POST["email"]) ) {
-			$email_error = "See vali on kohustuslik";
-		}
-		// kontrollime, et parool ei ole tuhi
-		if (empty($_POST["password"]) ) {
-			$passweord_error = "See vali on kohustuslik";
-		} else {
+		if(isset($_POST["login"])){ 
 			
-		//kui oleme siia joudnud, siis parool ei ole tuhi
-		
-			if(strlen($_POST["password"]) < 8) {
+			echo "vajutas login nuppu!";
+
+			if ( empty($_POST["email"]) ) {
+				$email_error = "See väli on kohustuslik";
+			}
+			
+			if ( empty($_POST["password"]) ) {
+				$password_error = "See väli on kohustuslik";
+			} else {
 				
-				$password_error = "Peab olema vahemalt 8 tahemarki pikk!";
+				if(strlen($_POST["password"]) < 8) { 
+				
+					$password_error = "Peab olema vähemalt 8 tähemärki pikk!";
+					
+				}
 				
 			}
 			
+			if($email_error == "" && $password_error ==""){
+				
+				echo "kontrollin sisselogimist ".$email." ja parool ";
+			}
+		
+		
+		
+		// keegi vajutas create nuppu
+		}elseif(isset($_POST["create"])){
+			
+			echo "vajutas create nuppu!";
+			
+			//valideerimine create user vormile
+			//kontrollin et e-post ei ole tühi
+			if ( empty($_POST["firstname"]) ) {
+				$name_error = "See väli on kohustuslik";
+			}else{
+				$firstname= test_input($_POST["firstname"]);
+			}
+			
+			if ( empty($_POST["lastname"]) ) {
+				$name_error = "See väli on kohustuslik";
+			}else{
+				$lastname = test_input($_POST["lastname"]);
+			}
+			
+			if($name_error == ""){
+				echo "salvestab ab'i".$firstname." ".$lastname;
+			}
 		}
 		
+		
+		
+	}
+	// eemaldab tahapahtlikud osad
+	function test_input($data) {
+		 $data = trim($data);
+		 $data = stripslashes($data);
+		 $data = htmlspecialchars($data);
+		 return $data;
 	}
 
 ?>
@@ -47,14 +87,14 @@
 	
 		<form action="newfile.php" method="post" >
 			<input name="email" type="email" placeholder="Email"> <?php echo $email_error; ?><br><br>
-			<input name="password" type="password" placeholder="Password"> <?php echo $email_error; ?><br><br>
-			<input type="submit" value="Log in">
+			<input name="password" type="password" placeholder="Password"> <?php echo $password_error; ?><br><br>
+			<input name="login" type="submit" value="Log in">
 		</form>
 		
 	<h2>Create user</h2>
 		<form action="newfile.php" method="post" >
-			<input name="name" type="name" placeholder="First name"> <?php echo $email_error; ?><br><br>
-			<input name="name" type="name" placeholder="Last name"> <?php echo $email_error; ?><br><br>
+			<input name="firstname" type="name" placeholder="First name"> <?php echo $name_error; ?>*<br><br>
+			<input name="lastname" type="name" placeholder="Last name"> <?php echo $name_error; ?>*<br><br>
 			<?php
 			// Число
 			echo "<select name='sel_date'>";
@@ -93,11 +133,11 @@
 			}
 			echo "</select>";
 			?><br><br>
-			<input name="email" type="email" placeholder="Email"> <?php echo $email_error; ?><br><br>
-			<input name="email" type="email" placeholder="Re-enter email"> <?php echo $email_error; ?><br><br>
-			<input name="password" type="password" placeholder="Password"> <?php echo $email_error; ?><br><br>
-			<input name="password" type="password" placeholder="Password"> <?php echo $email_error; ?><br><br>
-			<input type="submit" value="Create">
+			<input name="create_email" type="email" placeholder="Email"> <?php echo $name_error; ?>*<br><br>
+			<input name="create_email" type="email" placeholder="Re-enter email"> <?php echo $name_error; ?>*<br><br>
+			<input name="create_password" type="password" placeholder="Password"> <?php echo $name_error; ?>*<br><br>
+			<input name="create_password" type="password" placeholder="Password"> <?php echo $name_error; ?>*<br><br>
+			<input name="create" type="submit" value="Create">
 		</form>
 		
 		<form>
