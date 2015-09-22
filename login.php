@@ -1,4 +1,3 @@
-
 <?php
  
 	//echo$_POST["email"];
@@ -6,12 +5,16 @@
 	
 	$email_error = "";
 	$password_error = "";
-	
 	$name_error = "";
-	
+	$age_erro = "";
+	$vanus_error = "";
 	//muutujad ab väärtuste jaoks
+	
 	$email = "";
 	$name = "";
+	$password = "";
+	$age = "";
+	
 	
 	//kontrollime, et keegi vajutas input nuppu.
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -34,7 +37,7 @@
 			}	
 				
 			//kontrollin, et parool ei ole tühi
-			if(empty($_POST[$password])){
+			if(empty($_POST[$password]) ){
 				$password_error = "See väli on kohustuslik.";
 			}else{
 				
@@ -49,14 +52,13 @@
 			}
 			
 			//kontrollin et ei oleks ühtegi errorit
-			if($email_error == ""&& $password_eror ==""){
+			if($email_error == ""&& $password_error ==""){
 				
 				echo "kontrollin sisselogimist".$email." ja parool ";
 			}
 			
 			
-			
-			
+		
 		// keegi vajutas create  nuppu
 		}elseif(isset($_POST["create"])){
 			
@@ -64,7 +66,7 @@
 				
 			//valideerimine create user vormile
 			//kontrollin, et nimi ei ole tühi
-			if ( empty($_POST["name"]) ) {
+			if( empty($_POST["name"]) ) {
 				$name_error = "See väli on kohustuslik";
 			}else{
 				//kõik korras
@@ -75,7 +77,6 @@
 			if($name_error == ""){
 				echo "salvestan ab'i".@name;
 			}
- 		
 		
 		}
 	}	
@@ -86,20 +87,18 @@
 		$data = htmlspecialchars($data);
 		return $data;
 		
-
-
-
-
-
-	
 	}
 ?>
 <?php
 	$page_title = "Sisselogimise leht";
 	$page_file_name = "login.php";
 ?>
-<?php require_once("../header.php"); ?>
-	<h2>Sisselogimine</h2>
+<html>
+<head>
+	<title><?php echo $page_title; ?></title>
+	
+</head>
+<body>
 	
 		<form action="login.php" method="post">
 			<input name="email" type="email" placeholder="E-post" value="<?php echo $email; ?>"> <?php echo $email_error; ?> <br><br>
@@ -108,11 +107,16 @@
 		</form>
 		
 	<h2>Kasutaja loomine</h2>
+	
 		<form action="login.php" method="post">
-			<input name="name" type="text" placeholder="Eesnimi Perekonnanimi" value="<?php echo $name; ?>">* <?php echo$name_error; ?><br><br>
-			<input name="login" type="sumbit" value="Create">
+			<input name="name" type="text" placeholder="Perekonnanimi" value="<?php echo $name; ?>">* <?php echo$name_error; ?><br><br>
+			<input name="name" type="text" placeholder="Eesnimi" value="<?php echo $name; ?>">* <?php echo$name_error; ?><br><br>
+			<input name="name" type="text" placeholder="Vanus" value="<?php echo $name; ?>">* <?php echo$name_error; ?><br>
+			<input name="create" type="submit" value="Create">
 		</form>
 		
 		
 		
-<?php require_once("../footer.php"); ?>
+<p><i>Lehe tegi Henrik, 2015a.</i></p>
+</body>
+</html>
