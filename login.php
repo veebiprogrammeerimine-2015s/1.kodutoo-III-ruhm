@@ -1,5 +1,8 @@
 <?php
 
+	require_once("../config.php");
+	$database = "if15_earis_3";
+	$mysqli = new mysqli($servername, $username, $password, $database);
 	
 	//login.php
 	
@@ -15,6 +18,8 @@
 	$email2 ="";
 	$eesnimi ="";
 	$perekonnanimi ="";
+	$password1 ="";
+	$password2 ="";
 	
 	//kontrollime, et keegi vajutas input nuppu
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -38,6 +43,30 @@
 			} else if(strlen($_POST["password1"]) < 8) {
 					$password1_error ="Peab olema vähemalt 8 sümbolit pikk!";
 			}
+		//Võib kasutaja sisse logida
+			if($password1_error == "" && $email1_error == ""){
+				echo "Võib sisse logida! Kasutajanimi on ".$email1." ja parool on ".$password1;
+				
+				$hash = hash("sha512", $password1);
+				$stmt = $mysqli->prepare("SELECT id, email FROM users WHERE email=? AND password=?");
+				$stmt->bind_param("ss", $email1, $hash);
+				
+				//muutujad tulemustele
+				$stmt->bind_result($id_from_db, $email_from_db);
+				$stmt->execute();
+				
+				//Kontrollin kas tulemusi leiti
+				if($stmt->fetch()){
+					//andmebaasis oli midagi
+					echo "Email ja parool õiged, kasutaja id=" .$id_from_db;
+		
+				}else{
+					//ei leidnud
+					echo "Wrong credentials";
+				}
+					
+				$stmt->close();
+			}
 			
 			
 			//*****************************************
@@ -51,6 +80,8 @@
 				//kõik korras, test_input eemaldab pahatahtlikud osad
 				$eesnimi = test_input($_POST["eesnimi"]);
 				}
+				
+				
 			// kontrollin et perekonnanimi pole tühi
 			if ( empty($_POST["perekonnanimi"]) ) {
 				$perekonnanimi_error = "See väli on kohustuslik";
@@ -59,6 +90,7 @@
 				$perekonnanimi = test_input($_POST["perekonnanimi"]);
 				}
 				
+				
 			//kontrollin, et epost ei ole tühi
 			if ( empty($_POST["email2"]) ) {
 				$email2_error = "See väli on kohustuslik";
@@ -66,17 +98,46 @@
 				//kõik korras, test_input eemaldab pahatahtlikud osad
 				$email2 = test_input($_POST["email2"]);
 				}
+				
 			
 			//kontrollin, et parool ei ole tühi
 			if ( empty($_POST["password2"]) ) {
 				$password2_error = "See väli on kohustuslik";	
-			} else if(strlen($_POST["password2"]) < 8) {
+			} else {
+				
+				
+				if(strlen($_POST["password2"]) < 8) {
 					$password2_error ="Peab olema vähemalt 8 sümbolit pikk!";
+				}else{
+					$password2 = test_input($_POST["password2"]);
+				}
 			}
+			
+			
 			//kontrollin, et paroolid klapiksid
 			if ($_POST["password2"] != $_POST["password3"]) {
-				$password3_error = "Paroolid ei kattu. Proovi uuesti.";		
+				$password3_error = "Paroolid ei kattu. Proovi uuesti.";	
+
 				}
+				
+				
+			if(	$email2_error == "" && $password2_error == ""){
+				
+				//räsi paroolist, mille salvestame andmebaasi
+				$hash = hash("sha512", $password2);
+				
+				echo "Võib kasutajat luua! Kasutajanimi on ".$email2." ja parool on ".$password2. "ja räsi on ".$hash;
+				
+				$stmt = $mysqli->prepare("INSERT INTO users (email, password) VALUES (?, ?)");
+				//echo $mysqli->error;
+				//echo $stmt->error;
+				
+				// asendame ?;? ss - s on string email, s on string password
+				$stmt->bind_param("ss", $email2, $hash);
+				$stmt->execute();
+				$stmt->close();
+			}
+			
 				
 			}
 		} 
@@ -90,7 +151,7 @@
 }
 	
 	
-	
+	$mysqli->close();
 ?>
 <html>
 
@@ -111,7 +172,7 @@
 		<form action ="login.php" method="post">
 			<center><input type="text" name="eesnimi" value ="<?php echo $eesnimi ?>" placeholder="Eesnimi"><?php echo $eesnimi_error;?></center><br>
 			<center><input type="text" name="perekonnanimi" value ="<?php echo $perekonnanimi ?>" placeholder="Perekonnanimi"><?php echo $perekonnanimi_error;?></center><br>
-			<center><input name="email2" type="email" placeholder="E-post"><?php echo $email2_error; ?></center><br>
+			<center><input name="email2" type="email" placeholder="E-post" value ="<?php echo $email2 ?>"><?php echo $email2_error; ?></center><br>
 			<center><input name="password2" type="password" placeholder="Parool"><br><?php echo $password2_error; ?></center><br>
 			<center><input name="password3" type="password" placeholder="Korda parooli"><?php echo $password3_error; ?></center><br><br>
 			<center>Sugu?<br><input type="radio" name="sugu" value="mees">Mees&nbsp;&nbsp;&nbsp;<input type="radio" name="sugu" value="naine">Naine</center><br><br>
