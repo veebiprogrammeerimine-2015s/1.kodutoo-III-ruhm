@@ -50,7 +50,11 @@
 	<input name="name" type="first_name" placeholder="Eesnimi"><br><br>
 	<input name="name" type="last_name" placeholder="Perekonnanimi"><br><br>
 	<input name="date" type="date" placeholder="Sünniaeg ">*<?php echo $date_error ?><br>
-	<input type="submit" value="Edasta">
+	<input type="submit" value="Saini uppi">
 	</form>
+	
+	
+	<p style="text-align:center">Mõte on luua midagi 9gagi sarnast, aga ainult parema.
+	mis ei ole mõeldud 13 aastastele, kus naljad ajavad naerma ja elu on ilusam.<p>
 </body>
 </html>
