@@ -2,37 +2,113 @@
 
 	// LOGIN.PHP
 	
-	//errori muutujad peavad igal juhul olemas olema
-	$email_error= "";
-	$password_error="";
-	//echo $_POST["email"];
+	$email_error = "";
+	$password_error = "";
 	
-	//kontrollime et keegi vajutas input nuppu
+	$first_name_error = "";
+	$last_name_error = "";
+	
+	$email_add = "";
+	$email_add_error = "";
+	
+	$email_confirm = "";
+	$email_confirm_error = "";
+	
+	$password_one = "";
+	$password_one_error = "";
+	
+	$password_confirm = "";
+	$password_confirm_error = "";
+	
+	$first_name = "";
+	$last_name = "";
+	
+	$email = "";
+	
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 		
-		//echo "keegi vajutas nuppu";
-		
-		//kontrollin, et e-post ei ole tühi
-		
-		$email_error = "";
-		
-		if(empty($_POST["email"] ) ) {
-				$email_error = "See vali on kohustuslik";
+		if(isset($_POST["login"])){ 
+			
+			echo "vajutas login nuppu!";
+			if ( empty($_POST["email"]) ) {
+				$email_error = "See väli on kohustuslik";
+			}
+			
+			if ( empty($_POST["password"]) ) {
+				$password_error = "See väli on kohustuslik";
+			} else {
 				
-				//kontrollin, et parool ei ole tühi
-				if (empty($_POST["password"])) {
-					$password_error = "See väli on kohustuslik";
-				} else {
+				if(strlen($_POST["password"]) < 8) { 
 				
-					//kui oleme siia jõudnud, siis parool ei ole tühi
-					// kontrollin, et oleks vähemalt 8 sümbolit pikk
-					if(strlen($_POST["password"]) <8) {
-						$password_error = "Peab olema vähemalt 8 tähemärki pikk!";
-					}	
+					$password_error = "Peab olema vähemalt 8 tähemärki pikk!";
+					
 				}
+				
+			}
+			
+			if($email_error == "" && $password_error ==""){
+				
+				echo "kontrollin sisselogimist ".$email." ja parool ";
+			}
+		
+		
+		
+		// keegi vajutas create nuppu
+		}elseif(isset($_POST["create"])){
+			
+			echo "vajutas create nuppu!";
+			
+			//valideerimine create user vormile
+			//kontrollin et e-post ei ole tühi
+			if ( empty($_POST["firstname"]) ) {
+				$firstname_error = "See väli on kohustuslik";
+			}else{
+				$firstname= test_input($_POST["firstname"]);
+			}
+			
+			if ( empty($_POST["lastname"]) ) {
+				$lastname_error = "See väli on kohustuslik";
+			}else{
+				$lastname = test_input($_POST["lastname"]);
+			}
+			
+			if ( empty($_POST["create_email"]) ) {
+				$create_email_error = "See väli on kohustuslik";
+			}
+			
+			if ( empty($_POST["create_email_confirm"]) ) {
+				$create_email_confirm_error = "See väli on kojustuslik";
+			}
+			
+			if ( empty($_POST["create_password"]) ) {
+				$create_password_error = "See väli on kohustuslik";
+			} else {
+				
+				if(strlen($_POST["create_password"]) < 8) { 
+				
+					$create_password_error = "Peab olema vähemalt 8 tähemärki pikk!";
+					
+				}
+			}
+				
+			if ( empty($_POST["create_password_confirm"]) ) {
+				$create_password_confirm_error = "See väli on kohustuslik";
+			} else {
+				
+				if(strlen($_POST["create_password_confirm"]) < 8) { 
+				
+					$create_password_confirm_error = "Peab olema vähemalt 8 tähemärki pikk!";
+					
+				}
+			}
+			
 		}
 		
+		
+		
 	}
+	
+
 
 ?>
 <html>
@@ -50,10 +126,10 @@
 	
 	<h2>Create user</h2>
 	<form action="login.php" method="POST" >
-		<input name="First_name" placeholder="First name"> <br><br>
-		<input name="Last_name" placeholder="Last name"> <br><br>
-		<input name="email" placeholder="Email"> <?php echo $email_error; ?> <br><br>
-		<input name="email" placeholder="Re-enter Email"> <?php echo $email_error; ?> <br><br>
+		<input name="First_name" placeholder="First name"> <?php echo $first_name_error; ?> <br><br>
+		<input name="Last_name" placeholder="Last name"> <?php echo $last_name_error; ?> <br><br>
+		<input name="email_add" placeholder="Email"> <?php echo $email_add_error; ?> <br><br>
+		<input name="email_confirm" placeholder="Re-enter Email"> <?php echo $email_confirm_error; ?> <br><br>
 				<?php
 				echo "<select name='sel_date'>";
 				$i = 1;
@@ -90,12 +166,12 @@
 				}
 				echo "</select>" ;
 				?> <br><br>
-		<input name="password" type="password" placeholder="Password"> <?php echo $password_error; ?> <br><br>
-		<input name="password" type="password" placeholder="Re-enter Password"> <?php echo $password_error; ?>  <br><br>
+		<input name="password_one" type="password" placeholder="Password"> <?php echo $password_one_error; ?> <br><br>
+		<input name="password_confirm" type="password" placeholder="Re-enter Password"> <?php echo $password_confirm_error; ?>  <br><br>
 		<input type="submit" value="Registreeru"><br>
 		 
 		 <form>
-		 Minu idee on teha spordilehekülg spordilehekülg jalgpalli meeskonnas Manchester United, kus ma lisan uudiseid meeskonnas, siis võib teha foorumi, kus userid võivad arutlada meeskonna mänge ja jalgpallureid ja teha enda
+		 Minu idee on teha spordilehekülg jalgpalli meeskonnas Manchester United, kus ma lisan uudiseid meeskonnas, siis võib teha foorumi, kus userid võivad arutleda meeskonna mänge ja jalgpallureid ja teha enda
 		 teemasid.
 		 </form>
 
