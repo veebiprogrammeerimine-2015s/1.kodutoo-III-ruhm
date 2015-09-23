@@ -5,7 +5,20 @@
 	$email_error = "";
 	$password_error = "";
 	
-	$name_error = "";
+	$firstname_error = "";
+	$lastname_error = "";
+	
+	$create_email = "";
+	$create_email_error = "";
+	
+	$create_email_confirm = "";
+	$create_email_confirm_error = "";
+	
+	$create_password = "";
+	$create_password_error = "";
+	
+	$create_password_confirm = "";
+	$create_password_confirm_error = "";
 	
 	$firstname = "";
 	$lastname = "";
@@ -50,20 +63,47 @@
 			//valideerimine create user vormile
 			//kontrollin et e-post ei ole tühi
 			if ( empty($_POST["firstname"]) ) {
-				$name_error = "See väli on kohustuslik";
+				$firstname_error = "See väli on kohustuslik";
 			}else{
 				$firstname= test_input($_POST["firstname"]);
 			}
 			
 			if ( empty($_POST["lastname"]) ) {
-				$name_error = "See väli on kohustuslik";
+				$lastname_error = "See väli on kohustuslik";
 			}else{
 				$lastname = test_input($_POST["lastname"]);
 			}
 			
-			if($name_error == ""){
-				echo "salvestab ab'i".$firstname." ".$lastname;
+			if ( empty($_POST["create_email"]) ) {
+				$create_email_error = "See väli on kohustuslik";
 			}
+			
+			if ( empty($_POST["create_email_confirm"]) ) {
+				$create_email_confirm_error = "See väli on kojustuslik";
+			}
+			
+			if ( empty($_POST["create_password"]) ) {
+				$create_password_error = "See väli on kohustuslik";
+			} else {
+				
+				if(strlen($_POST["create_password"]) < 8) { 
+				
+					$create_password_error = "Peab olema vähemalt 8 tähemärki pikk!";
+					
+				}
+			}
+				
+			if ( empty($_POST["create_password_confirm"]) ) {
+				$create_password_confirm_error = "See väli on kohustuslik";
+			} else {
+				
+				if(strlen($_POST["create_password_confirm"]) < 8) { 
+				
+					$create_password_confirm_error = "Peab olema vähemalt 8 tähemärki pikk!";
+					
+				}
+			}
+			
 		}
 		
 		
@@ -93,8 +133,8 @@
 		
 	<h2>Create user</h2>
 		<form action="newfile.php" method="post" >
-			<input name="firstname" type="name" placeholder="First name"> <?php echo $name_error; ?>*<br><br>
-			<input name="lastname" type="name" placeholder="Last name"> <?php echo $name_error; ?>*<br><br>
+			<input name="firstname" type="name" placeholder="First name"> <?php echo $firstname_error; ?>*<br><br>
+			<input name="lastname" type="name" placeholder="Last name"> <?php echo $lastname_error; ?>*<br><br>
 			<?php
 			// Число
 			echo "<select name='sel_date'>";
@@ -133,10 +173,10 @@
 			}
 			echo "</select>";
 			?><br><br>
-			<input name="create_email" type="email" placeholder="Email"> <?php echo $name_error; ?>*<br><br>
-			<input name="create_email" type="email" placeholder="Re-enter email"> <?php echo $name_error; ?>*<br><br>
-			<input name="create_password" type="password" placeholder="Password"> <?php echo $name_error; ?>*<br><br>
-			<input name="create_password" type="password" placeholder="Password"> <?php echo $name_error; ?>*<br><br>
+			<input name="create_email" type="email" placeholder="Email"> <?php echo $create_email_error; ?>*<br><br>
+			<input name="create_email_confirm" type="email" placeholder="Re-enter email"> <?php echo $create_email_confirm_error; ?>*<br><br>
+			<input name="create_password" type="password" placeholder="Password"> <?php echo $create_password_error; ?>*<br><br>
+			<input name="create_password_confirm" type="password" placeholder="Password"> <?php echo $create_password_confirm_error; ?>*<br><br>
 			<input name="create" type="submit" value="Create">
 		</form>
 		
