@@ -59,9 +59,8 @@
 ?>
 
 <html>
-<head>
-	<title>Login page</title>
-</head>
+
+
 <body bgcolor="99FFCC">
 
 	<h2>Log in</h2>
