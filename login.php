@@ -92,9 +92,12 @@
 				?> <br><br>
 		<input name="password" type="password" placeholder="Password"> <?php echo $password_error; ?> <br><br>
 		<input name="password" type="password" placeholder="Re-enter Password"> <?php echo $password_error; ?>  <br><br>
-		 Sugu?<br><input type="checkbox" name="sugu" value="mees">Mees<input type="checkbox" name="sugu" value="naine">Naine<br><br>
-		 <input type="submit" value="Registreeru"><br>
+		<input type="submit" value="Registreeru"><br>
 		 
+		 <form>
+		 Minu idee on teha spordilehekülg spordilehekülg jalgpalli meeskonnas Manchester United, kus ma lisan uudiseid meeskonnas, siis võib teha foorumi, kus userid võivad arutlada meeskonna mänge ja jalgpallureid ja teha enda
+		 teemasid.
+		 </form>
 
 </body>
 
