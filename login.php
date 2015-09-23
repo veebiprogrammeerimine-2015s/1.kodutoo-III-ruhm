@@ -1,4 +1,7 @@
+
 <?php
+	//teema ideeks on unenägude blogi. Kasutajad saavda teha postitusi
+	//oma unenägude kohta ning teised kasutajad neid lugeda, kommenteerida, likeda.
 	//login.php
 	$email_error = "";
 	$password_error ="";
@@ -15,6 +18,7 @@
 		}
 		//kontrollin, et parool ei ole tühi
 		
+		
 		if( empty($_POST["password"])){
 			$password_error = "See väli on kohustuslik";
 		} else {
@@ -29,6 +33,7 @@
 	
 ?>
 <html>
+
 <head>
 	<title>Login page</title>
 </head>
