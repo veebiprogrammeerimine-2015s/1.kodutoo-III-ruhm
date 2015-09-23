@@ -50,8 +50,8 @@
 	
 	<h2>Create user</h2>
 	<form action="login.php" method="POST" >
-		<input name="First name" placeholder="First name"> <br><br>
-		<input name="Last name" placeholder="Last name"> <br><br>
+		<input name="First_name" placeholder="First name"> <br><br>
+		<input name="Last_name" placeholder="Last name"> <br><br>
 		<input name="email" placeholder="Email"> <?php echo $email_error; ?> <br><br>
 		<input name="email" placeholder="Re-enter Email"> <?php echo $email_error; ?> <br><br>
 				<?php
