@@ -61,43 +61,43 @@
 			//valideerimine create user vormile
 			//kontrollin et e-post ei ole tühi
 			if ( empty($_POST["firstname"]) ) {
-				$firstname_error = "See väli on kohustuslik";
+				$first_name_error = "See väli on kohustuslik";
 			}else{
-				$firstname= test_input($_POST["firstname"]);
+				$first_name= test_input($_POST["first_name"]);
 			}
 			
 			if ( empty($_POST["lastname"]) ) {
-				$lastname_error = "See väli on kohustuslik";
+				$last_name_error = "See väli on kohustuslik";
 			}else{
-				$lastname = test_input($_POST["lastname"]);
+				$last_name = test_input($_POST["last_name"]);
 			}
 			
-			if ( empty($_POST["create_email"]) ) {
-				$create_email_error = "See väli on kohustuslik";
+			if ( empty($_POST["email_add_email"]) ) {
+				$email_add_error = "See väli on kohustuslik";
 			}
 			
-			if ( empty($_POST["create_email_confirm"]) ) {
-				$create_email_confirm_error = "See väli on kojustuslik";
+			if ( empty($_POST["email_confirm"]) ) {
+				$email_confirm_error = "See väli on kojustuslik";
 			}
 			
-			if ( empty($_POST["create_password"]) ) {
-				$create_password_error = "See väli on kohustuslik";
+			if ( empty($_POST["password_one"]) ) {
+				$password_one_error = "See väli on kohustuslik";
 			} else {
 				
-				if(strlen($_POST["create_password"]) < 8) { 
+				if(strlen($_POST["password_one"]) < 8) { 
 				
-					$create_password_error = "Peab olema vähemalt 8 tähemärki pikk!";
+					$password_one_error = "Peab olema vähemalt 8 tähemärki pikk!";
 					
 				}
 			}
 				
-			if ( empty($_POST["create_password_confirm"]) ) {
-				$create_password_confirm_error = "See väli on kohustuslik";
+			if ( empty($_POST["password_confirm"]) ) {
+				$password_confirm_error = "See väli on kohustuslik";
 			} else {
 				
-				if(strlen($_POST["create_password_confirm"]) < 8) { 
+				if(strlen($_POST["password_one"]) < 8) { 
 				
-					$create_password_confirm_error = "Peab olema vähemalt 8 tähemärki pikk!";
+					$password_confirm_error = "Peab olema vähemalt 8 tähemärki pikk!";
 					
 				}
 			}
@@ -108,6 +108,13 @@
 		
 	}
 	
+	// eemaldab tahapahtlikud osad
+	function test_input($data) {
+		 $data = trim($data);
+		 $data = stripslashes($data);
+		 $data = htmlspecialchars($data);
+		 return $data;
+	}
 
 
 ?>
@@ -118,18 +125,18 @@
 <body>
 	<h2>Log in</h2>
 	<form action="login.php" method="POST" >
-		<input name="email" placeholder="E-post"> <?php echo $email_error; ?><br><br>
+		<input name="email" type="email" placeholder="E-post"> <?php echo $email_error; ?><br><br>
 		<input name="password" type="password" placeholder="Parool"> <?php echo $password_error; ?> <br><br>
-		<input type="submit" value="Log in">
+		<input name="login" type="submit" value="Log in">
 		
 	</form>
 	
 	<h2>Create user</h2>
 	<form action="login.php" method="POST" >
-		<input name="First_name" placeholder="First name"> <?php echo $first_name_error; ?> <br><br>
-		<input name="Last_name" placeholder="Last name"> <?php echo $last_name_error; ?> <br><br>
-		<input name="email_add" placeholder="Email"> <?php echo $email_add_error; ?> <br><br>
-		<input name="email_confirm" placeholder="Re-enter Email"> <?php echo $email_confirm_error; ?> <br><br>
+		<input name="First_name" type="name" placeholder="First name"> <?php echo $first_name_error; ?> <br><br>
+		<input name="Last_name" type="name" placeholder="Last name"> <?php echo $last_name_error; ?> <br><br>
+		<input name="email_add" type="email" placeholder="Email"> <?php echo $email_add_error; ?> <br><br>
+		<input name="email_confirm" type="email" placeholder="Re-enter Email"> <?php echo $email_confirm_error; ?> <br><br>
 				<?php
 				echo "<select name='sel_date'>";
 				$i = 1;
@@ -168,7 +175,7 @@
 				?> <br><br>
 		<input name="password_one" type="password" placeholder="Password"> <?php echo $password_one_error; ?> <br><br>
 		<input name="password_confirm" type="password" placeholder="Re-enter Password"> <?php echo $password_confirm_error; ?>  <br><br>
-		<input type="submit" value="Registreeru"><br>
+		<input name="create" type="submit" value="Create"><br>
 		 
 		 <form>
 		 Minu idee on teha spordilehekülg jalgpalli meeskonnas Manchester United, kus ma lisan uudiseid meeskonnas, siis võib teha foorumi, kus userid võivad arutleda meeskonna mänge ja jalgpallureid ja teha enda
