@@ -1,13 +1,13 @@
 <?php
- 
+									//mvp: Tahaksin teha midagi Instagram'i laadset.
 	//echo$_POST["email"];
 	//echo$_POST["password"];
 	
 	$email_error = "";
 	$password_error = "";
 	$name_error = "";
-	$age_erro = "";
-	$vanus_error = "";
+	$age_error = "";
+	
 	//muutujad ab väärtuste jaoks
 	
 	$email = "";
@@ -88,11 +88,11 @@
 		return $data;
 		
 	}
-?>
-<?php
+?>  
+<?php/
 	$page_title = "Sisselogimise leht";
 	$page_file_name = "login.php";
-?>
+?>                                                    
 <html>
 <head>
 	<title><?php echo $page_title; ?></title>
@@ -118,5 +118,5 @@
 		
 		
 <p><i>Lehe tegi Henrik, 2015a.</i></p>
-</body>
+</body>     
 </html>
