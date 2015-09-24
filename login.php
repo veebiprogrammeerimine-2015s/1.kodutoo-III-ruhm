@@ -1,38 +1,59 @@
-<?php
+ï»¿<?php
 	//LOGIN.PHP
 	//echo $_POST["email"];
 	$email_error = "";
+	$email1_error = "";
 	$password_error = "";
-	$name_error = "";
+	$password1_error = "";
+	$password_repeat_error = "";
+	
+	//Muutujad andmebaasi vÃ¤Ã¤rtuste jaoks
+	$email = "";
+	$email1 = "";
+	$password = "";
+	$password_repeat = "";
+	
 	
 	//kontrollin et input nuppu vajutati
+	
 	if($_SERVER["REQUEST_METHOD"]== "POST") {
 		//echo "Keegi vajutas nupppu";
 		
 		if(empty($_POST["email"])) {
-			$email_error = "See väli on kohustuslik";
+			$emai_error = "See vÃ¤li on kohustuslik";
 		}
-		//Kontrollin, et parool ei ole tühi
+		//Kontrollin, et parool ei ole tÃ¼hi
 		if(empty($_POST["password"])) {
-			$password_error = "See väli on kohustuslik";
+			$password_error = "See vÃ¤li on kohustuslik";
 		}	else {
-			//kui siia jõudnud siis pole tühi
+			//kui siia jÃµudnud siis pole tÃ¼hi
 			//Kontrollin parooli pikkust
 			if(strlen($_POST["password"]) <8) {
-				$password_error = "Peab olema vähemalt 8 tähemärki pikk!";
+				$password_error = "Peab olema vÃ¤hemalt 8 tÃ¤hemÃ¤rki pikk!";
 			}
 		}
 	}
 	
-	//Kontrollin, et input nuppu vajutati
+	//Kontrollin, et registreeri nuppu vajutati
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
-		//echo "keegi vajutas nuppu";
-		
-		if (empty($_POST["firstname"]))
-				$name_error = "See väli on kohustuslik";
+		//echo "keegi vajutas register nuppu";
+		if(isset($_POST["register"])) {
+			echo "Vajutas register nuppu";
+			 
+		}
 			
-	}
-?>
+		if (empty($_POST["email"])) {
+				$email1_error = "See vÃ¤li on kohustuslik";
+		} //else {
+			//	$email = test_input($_POST["email"]);
+		}	
+		if(empty($_POST["password"])) {
+			$password1_error = "See vÃ¤li on kohustuslik.";
+			
+		}
+	
+		
+	?>	
 
 <html>
 <head>
@@ -46,9 +67,10 @@
 		<input type ="submit" value="Logi sisse">
 	</form>
 	<h2>Create user</h2>
-	<form action="createuser.php" method="post" >
-		<input name="firstname" type="name" placeholder="Eesnimi"> <?php echo $name_error; ?> <br><br>
-		<input name="surname" type="name" placeholder="Perekonnanimi"> <?php echo $name_error; ?> <br> <br>
+	<form action="login.php" method="post" >
+		<input name="email" type="email" placeholder="E-post" value="<?php echo $email1; ?>"> <?php echo $email1_error; ?><br>
+		
+		<input name="register" type="submit" value="Registreeri"><br><br>
 	</form>	
 </body>
 </html>
