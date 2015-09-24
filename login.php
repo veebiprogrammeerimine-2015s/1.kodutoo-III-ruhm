@@ -11,6 +11,7 @@
 	$email = "";
 	$email1 = "";
 	$password = "";
+	$password1 = "";
 	$password_repeat = "";
 	
 	
@@ -52,6 +53,17 @@
 			
 		}
 	
+	
+	
+	function test_input($data) {
+		// võtab ära tühikud, enterid, tabid
+		$data = trim($data);
+		// tagurpidi kaldkriipsud
+		$data = stripslashes($data);
+		// teeb htmli tekstiks
+		$data = htmlspecialchars($data);
+		return $data;
+	}
 		
 	?>	
 
@@ -68,8 +80,10 @@
 	</form>
 	<h2>Create user</h2>
 	<form action="login.php" method="post" >
+		E-post:<br>
 		<input name="email" type="email" placeholder="E-post" value="<?php echo $email1; ?>"> <?php echo $email1_error; ?><br>
-		
+		Parool:<br>
+		<input name="password" type="password" placeholder="Parool"> <?php echo $password1_error; ?><br><br>
 		<input name="register" type="submit" value="Registreeri"><br><br>
 	</form>	
 </body>
