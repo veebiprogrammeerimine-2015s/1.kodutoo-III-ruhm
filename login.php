@@ -83,7 +83,9 @@
 		E-post:<br>
 		<input name="email" type="email" placeholder="E-post" value="<?php echo $email1; ?>"> <?php echo $email1_error; ?><br>
 		Parool:<br>
-		<input name="password" type="password" placeholder="Parool"> <?php echo $password1_error; ?><br><br>
+		<input name="password" type="password" placeholder="Parool"> <?php echo $password1_error; ?><br>
+		Parool uuesti:<br>
+		<input name="password_repeat" type="password" placeholder="Parool uuesti"> <?php echo $password_error; ?><br><br>
 		<input name="register" type="submit" value="Registreeri"><br><br>
 	</form>	
 </body>
