@@ -13,6 +13,8 @@
 	$password = "";
 	$password1 = "";
 	$password_repeat = "";
+	$name1 = "";
+	$name2 = "";
 	
 	
 	//kontrollin et input nuppu vajutati
@@ -96,7 +98,11 @@
 	</form>
 	<h2>Create user</h2>
 	<form action="login.php" method="post" >
-		E-post:<br>
+				Eesnimi:<br>
+				<input name="name1" type="name" placeholder="Eesnimi"> <br>
+				Perekonnanimi:<br>
+				<input name="name2" type="name" placeholder="Perekonnanimi"> <br>
+				E-post:<br>
 				<input name="email" type="email" placeholder="E-post" value="<?php echo $email; ?>"> <?php echo $email_error; ?><br>
 				Parool:<br>
 				<input name="password" type="password" placeholder="Parool"> <?php echo $password_error; ?><br>
