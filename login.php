@@ -2,8 +2,13 @@
 		//LOGIN.PHP
 		//tühjade väljade kontrolliks
 		$email_error = "";
+		$email_error2 = "";
 		$pw_error = "";
+		$pw_error2 = "";
 		$user_error = "";
+		$user_error2 = "";
+		
+		
 		
 		//kontrollime et keegi vajutas input nuppu
 		if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -68,9 +73,9 @@
 	<h2>Loo kasutaja</h2>
 		
 	<form action="login.php" method="post" >
-		<input type="text" name="username" placeholder="Kasutajanimi"> <?php  echo $user_error;  ?> <br><br>
-		<input type="password" name="password" placeholder="Parool"> <?php  echo $pw_error;  ?> <br><br>
-		<input type="email" name="email" placeholder="E-mail"> <?php echo $email_error; ?> <br> <br>
+		<input type="text" name="username" placeholder="Kasutajanimi"> <?php  echo $user_error2;  ?> <br><br>
+		<input type="password" name="password" placeholder="Parool"> <?php  echo $pw_error2;  ?> <br><br>
+		<input type="email" name="email" placeholder="E-mail"> <?php echo $email_error2; ?> <br> <br>
 		<input type="submit" value="Registreeri"> <br><br>
 	</form>
 	
