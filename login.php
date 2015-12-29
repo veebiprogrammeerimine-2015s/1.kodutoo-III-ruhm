@@ -2,7 +2,6 @@
 		//LOGIN.PHP
 		//tühjade väljade kontrolliks
 		$email_error = "";
-		$email_error2 = "";
 		$pw_error = "";
 		$pw_error2 = "";
 		$user_error = "";
@@ -17,6 +16,19 @@
 			
 			//kontrollin et e-post, password ei ole tühi
 			
+			if (empty($_POST["username"])) {
+				
+				$user_error = "See väli on kohustuslik";
+				
+				
+			}
+			
+			if (empty($_POST["username1"])) {
+				
+				$user_error2 = "See väli on kohustuslik";
+				
+				
+			}
 			if (empty($_POST["email"])) {
 				
 				$email_error = "See väli on kohustuslik";
@@ -26,32 +38,22 @@
 			if (empty($_POST["password"])) {
 				
 				$pw_error = "See väli on kohustuslik";
-				
-				
-			} else {
-				
-				//parool ei ole tühi ja kontrollime mitu tähemärki on
-				if(strlen($_POST["password"]) < 8 ) {
-					$pw_error = "Parool peab olema vähemalt 8 tähemärki pikk!";
-				}
-				
 			}
-		
-			
-		if (empty($_POST["username"])) {
+				if (empty($_POST["password2"])) {
 				
-				$user_error = "See väli on kohustuslik";
-				
-				
+				$pw_error2 = "See väli on kohustuslik";
+					
 			}
-			
-		
-		
-		
-		
-		
-		}
-		
+			else {
+			//siis pole parool tyhi
+			if(strlen($_POST["password"]) < 8)	{
+				$pw_error = "Peab olema vähemalt 8 tähemärki pikk!";
+			}
+			if(strlen($_POST["password2"]) < 8)	{
+				$pw_error2 = "Peab olema vähemalt 8 tähemärki pikk!";
+			}
+		}			
+	}
 		
 		
 		
@@ -65,7 +67,6 @@
 	
 	<form action="login.php" method="post" >
 		<input type="text" name="username" placeholder="Kasutajanimi"> <?php  echo $user_error;  ?> <br><br>
-		<input type="email" name="email" placeholder="E-post"> <?php  echo $email_error;  ?> <br><br>
 		<input type="password" name="password" placeholder="Parool"> <?php  echo $pw_error;  ?> <br><br>
 		<input type="submit" value="Log in"> <br><br>
 	</form>
@@ -73,8 +74,8 @@
 	<h2>Loo kasutaja</h2>
 		
 	<form action="login.php" method="post" >
-		<input type="text" name="username" placeholder="Kasutajanimi"> <?php  echo $user_error2;  ?> <br><br>
-		<input type="password" name="password" placeholder="Parool"> <?php  echo $pw_error2;  ?> <br><br>
+		<input type="text" name="username1" placeholder="Kasutajanimi"> <?php  echo $user_error2;  ?> <br><br>
+		<input type="password" name="password2" placeholder="Parool"> <?php  echo $pw_error2;  ?> <br><br>
 		<input type="email" name="email" placeholder="E-mail"> <?php echo $email_error2; ?> <br> <br>
 		<input type="submit" value="Registreeri"> <br><br>
 	</form>
